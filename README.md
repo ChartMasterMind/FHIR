@@ -77,15 +77,16 @@ Ce repository contient les fichiers suivants :
 
 ### **Prérequis**  
 
-Assurez-vous d'avoir installé et configuré les éléments suivants ( de preférence sur Docker pour Kafka ElasticSearch et Kibana)  :  
+Assurez-vous d'avoir installé et configuré les éléments suivants (de preférence sur Docker pour Kafka, ElasticSearch et Kibana)  :  
 - **Python 3.x**  
-- **Kafka**  
-- **Elasticsearch**  
-- **Kibana**
+- **Kafka 6.2.0**
+- **Zookeeper 6.2.0**  
+- **Elasticsearch 7.9.1**  
+- **Kibana 7.9.1**
 
 Le fichier requiremment.txt permet d'installer toutes les bibilothèques necessaire à un projet. 
 
-Installez les bibliothèques Python nécessaires avec la commande suivante : 
+Pour eviter tout conflit, vous pouvez aussi installez les bibliothèques Python nécessaires pour des version comptabile avec la commande suivante : 
 ```bash
 pip install -r requirements.txt
 
