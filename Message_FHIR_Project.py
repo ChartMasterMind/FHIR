@@ -85,6 +85,7 @@ for i in range (100):
         patient_id = fake.uuid4() 
 
         systolic = fake.random_int(min=78, max=190)  # Pression systolique
+        
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
         observations = generate_blood_pressure_observation(patient_id, systolic, diastolic)
@@ -112,9 +113,6 @@ for i in range (100):
 
         # Fonction pour détecter les anomalies
         def detect_anomaly(observations):
-
-            systolic = observations["component"][0]["valueQuantity"]["value"]
-            diastolic = observations["component"][1]["valueQuantity"]["value"]
 
             anomaly_type = "tension normale"
     

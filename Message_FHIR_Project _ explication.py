@@ -112,9 +112,15 @@ for i in range (100):
 
         # Fonction pour détecter les anomalies
         def detect_anomaly(observations):
+            
+            # remarque: ici, on auura tres bien pu faire juste systolic = systolic car tout simplement la valeur systolique que l'on a affecter dans le message FHIR
+            #bah c'est systolic = faker donc pas besoin de le chercher dans le message FHIR car c nous qui genre systolique
+            # mais j'ai ecrit ce code jsute pour voir comment extraire une valeur dans un dictionnaire avec des nested keys ( clée imbrique ( clés dans des clés))
 
-            systolic = observations["component"][0]["valueQuantity"]["value"]
-            diastolic = observations["component"][1]["valueQuantity"]["value"]
+            systolic = observations["component"][0]["valueQuantity"]["value"] # ou systolc = systolic ==> au choix 
+            diastolic = observations["component"][1]["valueQuantity"]["value"] # ou diastolique = diastalic ==> au choix
+
+            
 
             anomaly_type = "tension normale"
     
