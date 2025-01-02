@@ -5,23 +5,24 @@ import json
 from datetime import datetime
 from confluent_kafka import Consumer, Producer
 from elasticsearch import Elasticsearch
+import random
 
 
 # J'ai crée une fonction pour pouvoir simuler n observation de pression artérielle
 
  
-for i in range (100):
+for i in range (10):
+        
         
         # Fonction pour générer une observation de pression artérielle
-        def generate_blood_pressure_observation(patient_id, systolic, diastolic):
+        def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_dtr, patient_name):
             fake = Faker()
             
-            # Créer un patient avec un nom généré
-            patient_name = fake.name()
             patient = Patient(id=patient_id)
 
             # Message FHIR 
             observation = Observation(
+                
                 id=patient_id,
                 status="final",
                 category=[{
@@ -42,6 +43,7 @@ for i in range (100):
                     "reference": f"Patient/{patient.id}",
                     "display": patient_name
                 },
+                effectiveDateTime = random_date_str, 
                 component=[
                     {
                         "code": {
@@ -82,13 +84,33 @@ for i in range (100):
         # Génération des observations pour plusieurs patients
         fake = Faker()
 
-        patient_id = fake.uuid4() 
+        patient_id = fake.uuid4()
 
         systolic = fake.random_int(min=78, max=190)  # Pression systolique
-        
+
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
-        observations = generate_blood_pressure_observation(patient_id, systolic, diastolic)
+        random_date = fake.date_this_decade()
+
+        random_date_str = random_date.strftime('%Y-%m-%d')
+
+         # on créer ici un patient avec un nom généré et aléatoire 
+        patient_name_homme = fake.name_male()
+        patient_name_femme = fake.name_female()
+
+        patient_name = random.choice([patient_name_homme, patient_name_femme]) 
+
+        # identification du sexe selon le premom pour indexation sur elastic search
+
+        if patient_name == patient_name_homme:
+            sexe = "Homme"
+        else:
+            sexe = "Femme"
+
+        # generation du message dans observation
+
+        observations = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name)
+
 
         print(f"Observation générée pour le patient {patient_id}")
 
@@ -116,7 +138,7 @@ for i in range (100):
 
             anomaly_type = "tension normale"
     
-            if systolic >= 120 and systolic <= 130 and diastolic <= 80:
+            if systolic >= 120 and systolic <= 129 and diastolic < 80:
                 anomaly_type = "tension élevé"
             
             elif systolic >= 130 and systolic <= 139 and diastolic <= 80 and diastolic <= 89:
@@ -125,7 +147,7 @@ for i in range (100):
             elif systolic >= 140 or diastolic >= 90:
                 anomaly_type = "Hypertension de stade 2"
 
-            elif systolic >= 180 or diastolic >= 120:
+            elif systolic > 180 or diastolic > 120:
                 anomaly_type = "Crise hypertensive (Urgence immédiate)"
 
             elif systolic < 90 or diastolic < 60:
@@ -166,13 +188,13 @@ for i in range (100):
             patient_id, systolic, diastolic, anomaly_type = detect_anomaly(observations)  
 
             # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
-            anomaly_data = {'patient_id': patient_id,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type}
+            anomaly_data = {'patient_id': patient_id,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
             
             # j'ai rajouté cette ligne de commande car je recevai beacoup d'erreur 406 donc je essayé d'implémenter
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version2", body=anomaly_data)
+                res = es.index(index="blood_pressure_anomalies_version_3", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
             except Exception as e:

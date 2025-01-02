@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 from confluent_kafka import Consumer, Producer
 from elasticsearch import Elasticsearch
-
+import random
 
 # J'ai crée une fonction pour pouvoir simuler n observation de pression artérielle
 
@@ -13,7 +13,7 @@ from elasticsearch import Elasticsearch
 for i in range (100):
         
         # Fonction pour générer une observation de pression artérielle
-        def generate_blood_pressure_observation(patient_id, systolic, diastolic):
+        def generate_blood_pressure_observation(patient_id, systolic, diastolic,random_date_str):
             fake = Faker()
             
             # Créer un patient avec un nom généré
@@ -42,6 +42,7 @@ for i in range (100):
                     "reference": f"Patient/{patient.id}",
                     "display": patient_name
                 },
+                effectiveDateTime = random_date_str,
                 component=[
                     {
                         "code": {
@@ -87,7 +88,26 @@ for i in range (100):
         systolic = fake.random_int(min=78, max=190)  # Pression systolique
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
-        observations = generate_blood_pressure_observation(patient_id, systolic, diastolic)
+        # les objet date ne sont pas directement serizable en JSON donc il faut la convertir en str tout en suivant la structure année-mois-jour
+
+        random_date = fake.date_this_decade()
+
+        random_date_str = random_date.strftime('%Y-%m-%d')
+
+        observations = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str)
+
+        # # on créer ici un patient avec un nom généré homme ou femme et aléatoire 
+        patient_name_homme = fake.name_male()
+        patient_name_femme = fake.name_female()
+
+        patient_name = random.choice([patient_name_homme, patient_name_femme]) 
+        
+        # identification du sexe selon le premom pour indexation sur elastic search
+
+        if patient_name == patient_name_homme:
+            sexe = "Homme"
+        else:
+            sexe = "Femme"
 
         print(f"Observation générée pour le patient {patient_id}")
 
@@ -178,7 +198,7 @@ for i in range (100):
             # donc nos donnée seront affecter a une colonne ce qui facilite sa recherche) puis nous aide à les organiser et les afficher sur kibana)
             # sa permet de tranformer du data stream en table de donnée qui s'actualise ( donc qui sauvagrde de nouvelle donnée automatiquement selon des condition comme ici ( anomalie) ou non) 
 
-            anomaly_data = {'patient_id': patient_id,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type}
+            anomaly_data = {'patient_id': patient_id,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type,'date' : random_date_str, 'year': random_date.year}
             
             # j'ai rajouté cette ligne de commande car je recevai beacoup d'erreur 406 donc je essayé d'implémenter
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
