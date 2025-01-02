@@ -4,7 +4,7 @@ Ce code est la concécragtion d'un projet universitaire en Big Data qui visent �
 
 Ce dossier comporte 3 fichier mais seul 1 fichier est utilisable (le 1.): 
 
-1. [Géneration d'un message FHIR, de pression arteriielle, d'envoie de message vers kafka, et indextation sur elasticsearch](./Message_FHIR_Project.py)
+1. [Géneration d'un message FHIR, de pression arterielle, d'envoie de message vers kafka et indextation sur elasticsearch](./Message_FHIR_Project.py)
    
 2. [explication du code](./Message_FHIR_Project_explication.py)
 
