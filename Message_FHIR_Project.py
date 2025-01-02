@@ -91,8 +91,8 @@ for i in range (10):
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
         random_date = fake.date_this_decade()
-
-        random_date_str = random_date.strftime('%Y-%m-%d')
+        
+        random_date_str = random_date.isoformat()
 
          # on créer ici un patient avec un nom généré et aléatoire 
         patient_name_homme = fake.name_male()
@@ -194,7 +194,7 @@ for i in range (10):
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version_3", body=anomaly_data)
+                res = es.index(index="blood_pressure_anomalies_version_4", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
             except Exception as e:
