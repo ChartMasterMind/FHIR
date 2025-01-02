@@ -2,7 +2,7 @@ from faker import Faker
 from fhir.resources.observation import Observation
 from fhir.resources.patient import Patient
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from confluent_kafka import Consumer, Producer
 from elasticsearch import Elasticsearch
 import random
@@ -11,7 +11,7 @@ import random
 # J'ai crée une fonction pour pouvoir simuler n observation de pression artérielle
 
  
-for i in range (10):
+for i in range (100):
         
         
         # Fonction pour générer une observation de pression artérielle
@@ -91,7 +91,7 @@ for i in range (10):
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
         random_date = fake.date_this_decade()
-        
+
         random_date_str = random_date.isoformat()
 
          # on créer ici un patient avec un nom généré et aléatoire 
