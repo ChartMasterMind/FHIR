@@ -12,7 +12,7 @@ import random
 
 
 
-for i in range (10):
+for i in range (100):
         
         
         # Fonction pour générer une observation de pression artérielle
