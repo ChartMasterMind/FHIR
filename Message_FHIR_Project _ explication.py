@@ -92,7 +92,7 @@ for i in range (100):
 
         random_date = fake.date_this_decade()
 
-        random_date_str = random_date.strftime('%Y-%m-%d')
+        random_date_str = random_date.isoformat()
 
         observations = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str)
 

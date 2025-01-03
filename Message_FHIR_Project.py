@@ -10,8 +10,9 @@ import random
 
 # J'ai crée une fonction pour pouvoir simuler n observation de pression artérielle
 
- 
-for i in range (100):
+
+
+for i in range (10):
         
         
         # Fonction pour générer une observation de pression artérielle
@@ -144,11 +145,11 @@ for i in range (100):
             elif systolic >= 130 and systolic <= 139 and diastolic <= 80 and diastolic <= 89:
                 anomaly_type = "Hypertension de stade 1"
 
-            elif systolic >= 140 or diastolic >= 90:
-                anomaly_type = "Hypertension de stade 2"
-
             elif systolic > 180 or diastolic > 120:
                 anomaly_type = "Crise hypertensive (Urgence immédiate)"
+
+            elif systolic >= 140 or diastolic >= 90:
+                anomaly_type = "Hypertension de stade 2"
 
             elif systolic < 90 or diastolic < 60:
                 anomaly_type = "Hypotension"
@@ -194,7 +195,7 @@ for i in range (100):
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version_4", body=anomaly_data)
+                res = es.index(index="blood_pressure_anomalies_version_5", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
             except Exception as e:
