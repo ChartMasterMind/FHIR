@@ -6,46 +6,71 @@ from datetime import datetime, timedelta
 from confluent_kafka import Consumer, Producer
 from elasticsearch import Elasticsearch
 import random
-
+import os 
+import pytz
 
 # J'ai crée une fonction pour pouvoir simuler n observation de pression artérielle
+import os
+import random
+from datetime import datetime, timedelta
+import pytz  # Pour gérer les fuseaux horaires
+from faker import Faker
 
+file_path = "dernière_date.txt"
 
+file_path = "dernière_date.txt"
 
-for i in range (100):
-        
-        
-        # Fonction pour générer une observation de pression artérielle
-        def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_dtr, patient_name):
-            fake = Faker()
-            
-            patient = Patient(id=patient_id)
+# Charger la dernière date sauvegardée
+if os.path.exists(file_path):
+    with open(file_path, "r") as file:
+        last_date_str = file.read().strip()
+        # Essayer de lire au format avec fuseau horaire
+        try:
+            # Utiliser %z pour inclure le fuseau horaire
+            current_date = datetime.strptime(last_date_str, "%Y-%m-%dT%H:%M:%S%z")
+        except ValueError:
+            # Si le format avec fuseau horaire échoue, essayer sans fuseau horaire
+            try:
+                current_date = datetime.strptime(last_date_str, "%Y-%m-%dT%H:%M:%S")
+            except ValueError:
+                # Si la date n'a pas l'heure, tenter de la lire au format date seulement
+                current_date = datetime.strptime(last_date_str, "%Y-%m-%d")
+                current_date = current_date.replace(hour=0, minute=0, second=0)  # Ajouter 00:00:00
+else:
+    current_date = datetime(2020, 1, 1, 0, 0)  # Date par défaut avec heure à 00:00
 
-            # Message FHIR 
-            observation = Observation(
-                
-                id=patient_id,
-                status="final",
-                category=[{
+# Appliquer le fuseau horaire UTC si nécessaire
+utc_zone = pytz.utc
+if current_date.tzinfo is None:
+    current_date = utc_zone.localize(current_date)
+
+for i in range (50):
+# Fonction pour générer une observation de pression artérielle
+        def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
+            # Créer une observation FHIR
+            observation = {
+                "id": patient_id,
+                "status": "final",
+                "category": [{
                     "coding": [{
                         "system": "http://terminology.hl7.org/CodeSystem/observation-category",
                         "code": "vital-signs",
                         "display": "Vital Signs"
                     }]
                 }],
-                code={
+                "code": {
                     "coding": [{
                         "system": "http://loinc.org",
                         "code": "85354-9",
                         "display": "Blood pressure"
                     }]
                 },
-                subject={
-                    "reference": f"Patient/{patient.id}",
+                "subject": {
+                    "reference": f"Patient/{patient_id}",
                     "display": patient_name
                 },
-                effectiveDateTime = random_date_str, 
-                component=[
+                "effectiveDateTime": random_date_str,  # Date avec fuseau horaire
+                "component": [
                     {
                         "code": {
                             "coding": [{
@@ -77,23 +102,38 @@ for i in range (100):
                         }
                     }
                 ]
-            )
-            
-            return observation.dict()
+            }
 
+            return observation
 
-        # Génération des observations pour plusieurs patients
+    # Générer 10 observations
         fake = Faker()
-
+        # Générer les données aléatoires pour chaque observation
         patient_id = fake.uuid4()
-
+        patient_name = fake.name()
         systolic = fake.random_int(min=78, max=190)  # Pression systolique
-
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
-        random_date = fake.date_this_decade()
+        # Générer un delta aléatoire pour la date
+        delta_days = random.randint(0, 3)
+        delta_hours = random.randint(0, 23)
+        delta_minutes = random.randint(0, 59)
+        delta_seconds = random.randint(0, 59)
+        delta = timedelta(days=delta_days, hours=delta_hours, minutes=delta_minutes, seconds=delta_seconds)
 
-        random_date_str = random_date.isoformat()
+        # Mettre à jour la date actuelle
+        current_date += delta
+
+        # Convertir la date en chaîne au format ISO 8601 avec fuseau horaire UTC
+        random_date_str = current_date.strftime("%Y-%m-%dT%H:%M:%S%z")
+
+        # Générer l'observation
+        observation = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name)
+        print(observation)
+
+    # Sauvegarder la dernière date dans le fichier
+        with open(file_path, "w") as file:
+            file.write(current_date.strftime("%Y-%m-%dT%H:%M:%S%z"))
 
          # on créer ici un patient avec un nom généré et aléatoire 
         patient_name_homme = fake.name_male()
@@ -162,7 +202,7 @@ for i in range (100):
 
         # Consommateur Kafka
         def consumer_kafka(observations): 
-            c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumer', 'auto.offset.reset': 'earliest'})
+            c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
             c.subscribe(['blood_pressure_topic'])  # Topic Kafka où envoyer les données
 
             while True:
@@ -195,7 +235,7 @@ for i in range (100):
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version_5", body=anomaly_data)
+                res = es.index(index="blood_pressure_anomalies_version_test", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
             except Exception as e:
