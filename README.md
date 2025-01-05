@@ -69,15 +69,20 @@ Ce repository contient les fichiers suivants :
    - Fichier d'explication détaillant le fonctionnement du script principal.  
 
 3. **[normal_blood_pressure.json](./normal_blood_pressure.json)**  
-   - Exemple de fichier JSON contenant des messages FHIR de patients avec des pressions artérielles normales.
+   - Exemple de fichier JSON crée après l'execution du script prinicpal et contenant des messages FHIR de patients avec des pressions artérielles normales.
 
 4. **[dernière_date.txt](./dernière_date.txt)**
-   - Exemple de Fichier texte qui est crée apres l'éxecution du code et contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de lancer le code avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe.
+   - Exemple de Fichier texte qui est crée apres l'éxecution du script principal et contenant la dernière date de la dernière observation générée par le script : Ce fichier permet de relancer le script principal à partir de cette date à chaque exécution. Cela évite de lancer le script avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe.
 
 
 5. **[requirements.txt](./requirements.txt)**
-- fichier txt contenant les librairies nécessaires à l'execution du code.
+- fichier txt contenant les librairies nécessaires à l'execution du script principal.
 
+7.  **[DashBoard_Apercu_des_données.png](./DashBoard_Apercu_des_données.png)**
+- Dashboard kibana contenant les données générées
+
+8. **[DashBoard_Données_filtrées_pour_un_patient.png](./DashBoard_Données_filtrées_pour_un_patient.png)**
+- Dashboard kibana contenant les données générées pour un seul patient (suivi de la tension artérielle d'un patient dans le temps)
 ---
 
 ## **Instructions d’Utilisation**  
@@ -104,7 +109,7 @@ pip install -r requirements.txt
 
 Vous pouvez augmenter la période temporelle dans le fichier `Message_FHIR_Project.py` en modifiant la valeur dans la ligne `for i in range(500)`. Cela permet de travailler sur une période plus longue avec le même groupe de patients.
 
-- Par exemple, lancer le code avec 1000 itérations génère des mesures de pression SYS et DIA pour un seul groupe de patients sur une période moyenne de **6 ans** (soit environ **2 à 3 mesures par an** pour chaque patient).
+- Par exemple, lancer le script avec 1000 itérations génère des mesures de pression SYS et DIA pour un seul groupe de patients sur une période moyenne de **6 ans** (soit environ **2 à 3 mesures par an** pour chaque patient).
 
 ## 2. Ajuster le nombre de patients générés
 
