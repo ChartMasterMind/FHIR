@@ -245,15 +245,13 @@ for i in range (30):
         # Connexion à Elasticsearch
             es = Elasticsearch()
 
-        
-            anomaly_type = detect_anomaly(observations) 
-
             msg = json.loads(msg.value().decode('utf-8'))
-
+            anomaly_type = detect_anomaly(msg)
             systol1c = msg['component'][0]['valueQuantity']['value']
             diastol1c = msg['component'][1]['valueQuantity']['value']
-
-            anomaly_type = detect_anomaly(observation) 
+            patients_id = msg['id']
+            randome_date_str = msg["effectiveDateTime"]
+ 
 
             # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
             anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
