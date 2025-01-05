@@ -72,7 +72,7 @@ Ce repository contient les fichiers suivants :
    - Exemple de fichier JSON contenant des messages FHIR de patients avec des pressions artérielles normales.
 
 4. **[dernière_date.txt](./dernière_date.txt)**
-   - Fichier texte contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de relancer le code avec 1000 itérations inutiles et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe. Vous pouvez également augmenter le nombre d'observations dans le fichier Message_FHIR_Project.py en modifiant la valeur dans la ligne for i in range(500) pour travailler sur le même groupe de patients.
+   - Fichier texte contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de lancer le code avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe. Vous pouvez également augmenter le nombre d'observations dans le fichier Message_FHIR_Project.py en modifiant la valeur dans la ligne for i in range(500) pour travailler sur le même groupe de patients ( 1000 itération = géneration de pression SYS et DIA pour un seul groupe de patient sur 6 ans en moyenne ( c'est a dire 2 à 3 mesure par an en moyenne de leurs tension artérielle pour chaque patient)
 
 5. **[requirements.txt](./requirements.txt)**
 - fichier txt contenant les librairies nécessaires à l'execution du code.
