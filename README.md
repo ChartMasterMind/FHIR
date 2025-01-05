@@ -113,7 +113,7 @@ Vous pouvez augmenter la période temporelle dans le fichier `Message_FHIR_Proje
 
 ## 2. Ajuster le nombre de patients générés
 
-Vous pouvez également augmenter le nombre de patients dans un groupe en modifiant la valeur dans la première boucle `for i in range`. Cela vous permet d'adapter le nombre de patients en fonction de la période que vous souhaitez étudier :
+Vous pouvez également augmenter le nombre de patients dans un groupe en modifiant la valeur dans la première boucle `for i in range(100)`. Cela vous permet d'adapter le nombre de patients en fonction de la période que vous souhaitez étudier :
 
 - Si vous voulez une période plus courte, réduisez le nombre d'itérations dans le code (ligne `for i in range(500)`).
 - Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
@@ -123,7 +123,7 @@ Vous pouvez également augmenter le nombre de patients dans un groupe en modifia
 Si vous préférez travailler avec plusieurs groupes de patients pour maintenir la diversité des données, voici deux options :
 
 - **Travailler avec un grand nombre de patients sur une seule période** :
-    - Augmentez le nombre de patients dans la boucle `for i in range(50)` et exécutez le code une seule fois.
+    - Augmentez le nombre de patients dans la boucle `for i in range(100)` et exécutez le code une seule fois.
     - Vous pourrez ajuster la durée de la période en modifiant le nombre d'itérations dans la deuxième boucle.
 
 - **Travailler avec des groupes de patients distincts pour différentes périodes** :
