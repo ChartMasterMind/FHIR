@@ -72,7 +72,8 @@ Ce repository contient les fichiers suivants :
    - Exemple de fichier JSON contenant des messages FHIR de patients avec des pressions artérielles normales.
 
 4. **[dernière_date.txt](./dernière_date.txt)**
-   - Fichier texte contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de lancer le code avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe. Vous pouvez également augmenter le nombre d'observations dans le fichier Message_FHIR_Project.py en modifiant la valeur dans la ligne for i in range(500) pour travailler sur le même groupe de patients ( 1000 itération = géneration de pression SYS et DIA pour un seul groupe de patient sur 6 ans en moyenne ( c'est a dire 2 à 3 mesure par an en moyenne de leurs tension artérielle pour chaque patient)
+   - Fichier texte contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de lancer le code avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe.
+
 
 5. **[requirements.txt](./requirements.txt)**
 - fichier txt contenant les librairies nécessaires à l'execution du code.
@@ -97,4 +98,30 @@ Pour eviter tout conflit, vous pouvez aussi installez les bibliothèques Python 
 pip install -r requirements.txt
 ```
 
+# Instructions d'usage
+
+## 1. Ajuster la période temporelle
+
+Vous pouvez augmenter la période temporelle dans le fichier `Message_FHIR_Project.py` en modifiant la valeur dans la ligne `for i in range(500)`. Cela permet de travailler sur une période plus longue avec le même groupe de patients.
+
+- Par exemple, lancer le code avec 1000 itérations génère des mesures de pression SYS et DIA pour un seul groupe de patients sur une période moyenne de **6 ans** (soit environ **2 à 3 mesures par an** pour chaque patient).
+
+## 2. Ajuster le nombre de patients générés
+
+Vous pouvez également augmenter le nombre de patients dans un groupe en modifiant la valeur dans la première boucle `for i in range`. Cela vous permet d'adapter le nombre de patients en fonction de la période que vous souhaitez étudier :
+
+- Si vous voulez une période plus courte, réduisez le nombre d'itérations dans le code (ligne `for i in range(500)`).
+- Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
+
+## 3. Travailler avec différents groupes de patients
+
+Si vous préférez travailler avec plusieurs groupes de patients pour maintenir la diversité des données, voici deux options :
+
+- **Travailler avec un grand nombre de patients sur une seule période** :
+    - Augmentez le nombre de patients dans la boucle `for i in range(50)` et exécutez le code une seule fois.
+    - Vous pourrez ajuster la durée de la période en modifiant le nombre d'itérations dans la deuxième boucle.
+
+- **Travailler avec des groupes de patients distincts pour différentes périodes** :
+    - Par exemple, analyser un groupe de patients sur 3 ans, puis un autre groupe pour les 3 années suivantes.
+    - Dans ce cas, relancez le code deux fois pour travailler avec des groupes différents à des périodes distinctes.
 
