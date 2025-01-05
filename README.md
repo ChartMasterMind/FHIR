@@ -1,4 +1,4 @@
-# **Surveillance de la Pression Artérielle avec FHIR, Kafka, Elasticsearch et Kibana**
+# **Surveillance de la Pression Artérielle à travers des messages FHIR avec Kafka, Elasticsearch, Kibana et Python**
 
 Bienvenue dans ce repository GitHub qui contient le code source et les fichiers d'un projet universitaire en Big Data.  
 Ce projet implémente une solution complète pour surveiller les pressions artérielles des patients en temps réel, en utilisant les technologies modernes comme **Kafka**, **Elasticsearch**, et **Kibana**.  
@@ -69,31 +69,36 @@ Ce repository contient les fichiers suivants :
    - Fichier d'explication détaillant le fonctionnement du script principal.  
 
 3. **[normal_blood_pressure.json](./normal_blood_pressure.json)**  
-   - Exemple de fichier JSON contenant des messages FHIR de patients avec des pressions artérielles normales.
+   - Exemple de fichier JSON crée après l'execution du script prinicpal et contenant des messages FHIR de patients avec des pressions artérielles normales.
 
 4. **[dernière_date.txt](./dernière_date.txt)**
-   - Fichier texte contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de lancer le code avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe.
+   - Exemple de Fichier texte qui est crée apres l'éxecution du script principal et contenant la dernière date de la dernière observation générée par le script : Ce fichier permet de relancer le script principal à partir de cette date à chaque exécution. Cela évite de lancer le script avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe.
 
 
 5. **[requirements.txt](./requirements.txt)**
-- fichier txt contenant les librairies nécessaires à l'execution du code.
+   - Fichier txt contenant les librairies nécessaires à l'execution du script principal.
 
+6.  **[DashBoard_Apercu_des_données.png](./DashBoard_Kibana/DashBoard_Apercu_des_données.png)**
+   - Dashboard kibana contenant les données générées par le script principal
+
+8. **[DashBoard_Données_filtrées_pour_un_patient.png](./DashBoard_Kibana/DashBoard_Données_filtrées_pour_un_patient.png)**
+   - Dashboard kibana contenant les données générées pour un seul patient (suivi de la tension artérielle d'un patient dans le temps)
 ---
 
 ## **Instructions d’Utilisation**  
 
 ### **Prérequis**  
 
-Assurez-vous d'avoir installé et configuré les éléments suivants (de preférence sur Docker pour Kafka, ElasticSearch et Kibana)  :  
+Assurez-vous d'avoir installé et configuré les éléments suivants (de preférence sur Docker)  :  
 - **Python 3.x**  
 - **Kafka 6.2.0**
 - **Zookeeper 6.2.0**  
 - **Elasticsearch 7.9.1**  
 - **Kibana 7.9.1**
 
-Le fichier requirement.txt permet d'installer toutes les bibilothèques necessaires à un projet. 
+Le fichier requirements.txt permet d'installer toutes les bibilothèques necessaires à ce projet. 
 
-Pour eviter tout conflit, vous pouvez aussi installez les bibliothèques Python nécessaires pour des versions comptabiles avec la commande suivante : 
+Pour eviter tout incompatibilité des versions (nottament avec ElasticSearch sur Docker) , vous pouvez installez les bibliothèques Python nécessaires à ce projet avec la commande suivante : 
 ```bash
 pip install -r requirements.txt
 ```
@@ -104,11 +109,11 @@ pip install -r requirements.txt
 
 Vous pouvez augmenter la période temporelle dans le fichier `Message_FHIR_Project.py` en modifiant la valeur dans la ligne `for i in range(500)`. Cela permet de travailler sur une période plus longue avec le même groupe de patients.
 
-- Par exemple, lancer le code avec 1000 itérations génère des mesures de pression SYS et DIA pour un seul groupe de patients sur une période moyenne de **6 ans** (soit environ **2 à 3 mesures par an** pour chaque patient).
+- Par exemple, lancer le script avec 1000 itérations génère des mesures de pression SYS et DIA pour un seul groupe de patients sur une période moyenne de **6 ans** (soit environ **1 à 2 mesures par an**  pour chaque patient).
 
 ## 2. Ajuster le nombre de patients générés
 
-Vous pouvez également augmenter le nombre de patients dans un groupe en modifiant la valeur dans la première boucle `for i in range`. Cela vous permet d'adapter le nombre de patients en fonction de la période que vous souhaitez étudier :
+Vous pouvez également augmenter le nombre de patients dans un groupe en modifiant la valeur dans la première boucle `for i in range(100)`. Cela vous permet d'adapter le nombre de patients en fonction de la période que vous souhaitez étudier :
 
 - Si vous voulez une période plus courte, réduisez le nombre d'itérations dans le code (ligne `for i in range(500)`).
 - Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
@@ -118,7 +123,7 @@ Vous pouvez également augmenter le nombre de patients dans un groupe en modifia
 Si vous préférez travailler avec plusieurs groupes de patients pour maintenir la diversité des données, voici deux options :
 
 - **Travailler avec un grand nombre de patients sur une seule période** :
-    - Augmentez le nombre de patients dans la boucle `for i in range(50)` et exécutez le code une seule fois.
+    - Augmentez le nombre de patients dans la boucle `for i in range(100)` et exécutez le code une seule fois.
     - Vous pourrez ajuster la durée de la période en modifiant le nombre d'itérations dans la deuxième boucle.
 
 - **Travailler avec des groupes de patients distincts pour différentes périodes** :
