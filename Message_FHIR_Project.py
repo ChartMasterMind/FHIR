@@ -194,7 +194,7 @@ for i in range (500):
 
 
         # Fonction pour détecter les anomalies
-        def detect_anomaly(systolic, diastolic):
+        def detect_anomaly(observations):
 
             anomaly_type = "tension normale"
     
@@ -216,41 +216,51 @@ for i in range (500):
 
             print(f"Vérification pour patient {observations['subject']['display']}: systolic = {systolic}, diastolic = {diastolic}")
             
-            return anomaly_type
+            return patient_id, systolic, diastolic, anomaly_type
 
-        # envoie de message kafka vers elasticsearch pour indexation
 
-        def kafka_consumer_vers_elasticsearch(observations):
-            c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumer', 'auto.offset.reset': 'earliest'})
-            c.subscribe(['blood_pressure_topic'])
+        # Consommateur Kafka
+        def consumer_kafka(observations): 
+            c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
+            c.subscribe(['blood_pressure_topic'])  # Topic Kafka où envoyer les données
 
             while True:
                 msg = c.poll(1.0)
+            
                 if msg is None:
                     break
                 if msg.error():
                     print("Consumer error: {}".format(msg.error()))
                     continue
+
                 print('Message reçu : {}'.format(msg.value().decode('utf-8')))
                 break
+
             c.close()
+
+        consumer_kafka(observations)
+
+
+        # Connexion à Elasticsearch
+        es = Elasticsearch()
+
+        def anomaly_elasticsearch(observations):
+            patient_id, systolic, diastolic, anomaly_type = detect_anomaly(observations)  
+
+            # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
+            anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
             
-            es = Elasticsearch()
-            observation = json.loads(msg.value().decode('utf-8'))
-            systolic = observation['component'][0]['valueQuantity']['value']
-            diastolic = observation['component'][1]['valueQuantity']['value']
-
-            anomaly_type = detect_anomaly(systolic,diastolic)
-
-            anomaly_data = {"patient_id": observation['id'],"patient_name": observation['subject']['display'],"systolic_pressure": systolic,"diastolic_pressure": diastolic,"anomaly_type": anomaly_type,"date": random_date_str,'sex': sexe}
-
+            # j'ai rajouté cette ligne de commande car je recevai beacoup d'erreur 406 donc je essayé d'implémenter
+            # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
-                res = es.index(index="blood_pressure_anomalies_version_test", body=anomaly_data)
+                # Indexation des données dans Elasticsearch
+                res = es.index(index="blood_pressure_anomalies_version_final_1", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
+
             except Exception as e:
                 print(f"Erreur lors de l'indexation : {e}")
 
-            
+
         def save_normal_data(observations, filename):
             try:
                 with open(filename, 'r') as file:
@@ -270,11 +280,10 @@ for i in range (500):
 
 
         # Vérification et envoi dans Elasticsearch ou sauvegarde du fichier
-        anomaly_type = detect_anomaly(systolic, diastolic)
+        anomaly_type = detect_anomaly(observations)[3]
         if anomaly_type in ["tension élevé" , "Hypertension de stade 1", "Hypertension de stade 2","Crise hypertensive (Urgence immédiate)", "Hypotension"]:
             print(f"Vérification : Anomalie détectée: {anomaly_type}")
-            kafka_consumer_vers_elasticsearch(observations)
+            anomaly_elasticsearch(observations)
         if anomaly_type == "tension normale": 
             print("Observation normale")
             save_normal_data(observations, 'normal_blood_pressure.json')
-
