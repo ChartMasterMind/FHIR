@@ -1,3 +1,4 @@
+
 from faker import Faker
 from fhir.resources.observation import Observation
 from fhir.resources.patient import Patient
@@ -47,7 +48,7 @@ sex_liste = []
 
 # Création du dictionnaire vide en dehors de la boucle
 dict_name_id = {}
-for i in range(10):
+for i in range(100):
     # Générer un ID unique
     patient_id = fake.uuid4()
     liste_id.append(patient_id)
@@ -194,7 +195,10 @@ for i in range (30):
 
 
         # Fonction pour détecter les anomalies
-        def detect_anomaly(observations):
+        def detect_anomaly(observation):
+
+            systol1c = observation['component'][0]['valueQuantity']['value']
+            diastol1c = observation['component'][1]['valueQuantity']['value']
 
             anomaly_type = "tension normale"
     
@@ -220,7 +224,7 @@ for i in range (30):
 
 
         # Consommateur Kafka
-        def consumer_kafka_elasticsearch(observations): 
+        def consumer_kafka(observations): 
             c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
             c.subscribe(['blood_pressure_topic'])  # Topic Kafka où envoyer les données
 
@@ -237,15 +241,19 @@ for i in range (30):
                 break
 
             c.close()
-        
+
         # Connexion à Elasticsearch
             es = Elasticsearch()
 
-            anomaly_type = detect_anomaly(observations)
-            observation = json.loads(msg.value().decode('utf-8'))
+        
+            anomaly_type = detect_anomaly(observations) 
 
-            systolic = observation['component'][0]['valueQuantity']['value']
-            diastolic = observation['component'][1]['valueQuantity']['value']
+            msg = json.loads(msg.value().decode('utf-8'))
+
+            systol1c = msg['component'][0]['valueQuantity']['value']
+            diastol1c = msg['component'][1]['valueQuantity']['value']
+
+            anomaly_type = detect_anomaly(observation) 
 
             # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
             anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
@@ -283,7 +291,7 @@ for i in range (30):
         anomaly_type = detect_anomaly(observations)
         if anomaly_type in ["tension élevé" , "Hypertension de stade 1", "Hypertension de stade 2","Crise hypertensive (Urgence immédiate)", "Hypotension"]:
             print(f"Vérification : Anomalie détectée: {anomaly_type}")
-            consumer_kafka_elasticsearch(observations)
+            consumer_kafka(observations)
         if anomaly_type == "tension normale": 
             print("Observation normale")
             save_normal_data(observations, 'normal_blood_pressure.json')
