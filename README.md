@@ -76,7 +76,7 @@ Ce repository contient les fichiers suivants :
 
 
 5. **[requirements.txt](./requirements.txt)**
-   - fichier txt contenant les librairies nécessaires à l'execution du script principal.
+   - Fichier txt contenant les librairies nécessaires à l'execution du script principal.
 
 6.  **[DashBoard_Apercu_des_données.png](./DashBoard_Kibana/DashBoard_Apercu_des_données.png)**
    - Dashboard kibana contenant les données générées
