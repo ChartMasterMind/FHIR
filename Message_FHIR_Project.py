@@ -34,7 +34,7 @@ if os.path.exists(file_path):
 else:
     current_date = datetime(2020, 1, 1, 0, 0)  # Date par défaut avec heure à 00:00
 
-# Appliquer le fuseau horaire UTC si nécessaire
+# J'ai appliquer ici un fuseau horaire UTC 
 utc_zone = pytz.utc
 if current_date.tzinfo is None:
     current_date = utc_zone.localize(current_date)
