@@ -73,7 +73,7 @@ for i in range(100):
 # Utilisation de zip() pour associer ID, prénom et sexe
 dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
 
-for i in range (30):
+for i in range (500):
 # Fonction pour générer une observation de pression artérielle
         def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
             # Créer une observation FHIR
@@ -260,7 +260,7 @@ for i in range (30):
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version_test", body=anomaly_data)
+                res = es.index(index="blood_pressure_anomalies_version_final_1", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
             except Exception as e:
