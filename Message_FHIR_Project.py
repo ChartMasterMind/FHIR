@@ -250,7 +250,6 @@ for i in range (500):
             systol1c = msg['component'][0]['valueQuantity']['value']
             diastol1c = msg['component'][1]['valueQuantity']['value']
             patients_id = msg['id']
-            randome_date_str = msg["effectiveDateTime"]
  
 
             # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
