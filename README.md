@@ -115,6 +115,6 @@ Si vous voulez une période plus courte, réduisez le nombre d'itérations dans 
 Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
 
 ## **3. Travaillez avec plusieurs groupes :**
-Vous pouvez travailez avec plsuieur groupes de patients differents sur differente perdiode. Par exemple, vous pourrais trvailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
+Vous pouvez travailez avec plusieurs groupes de patients differents sur differentes perdiodes. Par exemple, vous pourrais trvailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
 
 
