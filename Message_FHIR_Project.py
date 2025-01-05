@@ -185,7 +185,7 @@ for i in range (500):
             })
 
             OBS_JSON = json.dumps(observations)  # Convertir le dict en JSON, nécessaire pour produire avec Kafka
-            producer.produce('blood_pressure_topic', value=OBS_JSON)
+            producer.produce('blood_pressure_topic', value=OBS_JSON) # definition de notre topic kafka où envoyer les données.
 
             print("Observation envoyée à Kafka")
             producer.flush()
@@ -223,10 +223,10 @@ for i in range (500):
             return anomaly_type
 
 
-        # Consommateur Kafka
+        # Consommateur Kafka , envoie de message pour notre serveur elasticsearch
         def consumer_kafka(observations): 
             c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
-            c.subscribe(['blood_pressure_topic'])  # Topic Kafka où envoyer les données
+            c.subscribe(['blood_pressure_topic'])  # Topic Kafka où sont stocker les données du producteur
 
             while True:
                 msg = c.poll(1.0)
@@ -242,17 +242,25 @@ for i in range (500):
 
             c.close()
 
-        # Connexion à Elasticsearch
+        # Connexion à Elasticsearch et indexation des données
             es = Elasticsearch()
 
             msg = json.loads(msg.value().decode('utf-8'))
             anomaly_type = detect_anomaly(msg)
             systol1c = msg['component'][0]['valueQuantity']['value']
             diastol1c = msg['component'][1]['valueQuantity']['value']
-            patients_id = msg['id']
- 
+            patient_ib = msg['id']
+            sexc , patient_namc = dict_name_id[msg["id"]]
+            randon_date_str = msg["effectiveDateTime"]
 
-            # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
+
+
+        
+            
+
+            anomaly_type = detect_anomaly(msg)
+            
+            # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana.
             anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
             
             # j'ai rajouté cette ligne de commande car je recevai beacoup d'erreur 406 donc je essayé d'implémenter
