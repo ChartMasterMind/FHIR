@@ -1,4 +1,4 @@
-# **Surveillance de la Pression Artérielle avec FHIR, Kafka, Elasticsearch et Kibana**
+# **Surveillance de la Pression Artérielle à travers des messages FHIR avec Kafka, Elasticsearch, Kibana et Python**
 
 Bienvenue dans ce repository GitHub qui contient le code source et les fichiers d'un projet universitaire en Big Data.  
 Ce projet implémente une solution complète pour surveiller les pressions artérielles des patients en temps réel, en utilisant les technologies modernes comme **Kafka**, **Elasticsearch**, et **Kibana**.  
