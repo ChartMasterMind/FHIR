@@ -2,48 +2,104 @@ from faker import Faker
 from fhir.resources.observation import Observation
 from fhir.resources.patient import Patient
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from confluent_kafka import Consumer, Producer
 from elasticsearch import Elasticsearch
 import random
+import os 
+import pytz
 
 # J'ai crée une fonction pour pouvoir simuler n observation de pression artérielle
 
- 
-for i in range (100):
-        
-        # Fonction pour générer une observation de pression artérielle
-        def generate_blood_pressure_observation(patient_id, systolic, diastolic,random_date_str):
-            fake = Faker()
-            
-            # Créer un patient avec un nom généré
-            patient_name = fake.name()
-            patient = Patient(id=patient_id)
+file_path = "dernière_date.txt"
 
-            # Message FHIR 
-            observation = Observation(
-                id=patient_id,
-                status="final",
-                category=[{
+
+# Charger la dernière date sauvegardée
+if os.path.exists(file_path):
+    with open(file_path, "r") as file:
+        last_date_str = file.read().strip()
+        # Essayer de lire au format avec fuseau horaire
+        try:
+            # Utiliser %z pour inclure le fuseau horaire
+            current_date = datetime.strptime(last_date_str, "%Y-%m-%dT%H:%M:%S%z")
+        except ValueError:
+            # Si le format avec fuseau horaire échoue, essayer sans fuseau horaire
+            try:
+                current_date = datetime.strptime(last_date_str, "%Y-%m-%dT%H:%M:%S")
+            except ValueError:
+                # Si la date n'a pas l'heure, tenter de la lire au format date seulement
+                current_date = datetime.strptime(last_date_str, "%Y-%m-%d")
+                current_date = current_date.replace(hour=0, minute=0, second=0)  # Ajouter 00:00:00
+else:
+    current_date = datetime(2020, 1, 1, 0, 0)  # Date par défaut avec heure à 00:00
+
+# Appliquer le fuseau horaire UTC si nécessaire
+utc_zone = pytz.utc
+if current_date.tzinfo is None:
+    current_date = utc_zone.localize(current_date)
+
+# génere 500 id 
+
+fake = Faker()
+
+liste_id = []
+patient_name_liste = []
+sex_liste = []
+
+# Création du dictionnaire vide en dehors de la boucle
+dict_name_id = {}
+for i in range(50):
+    # Générer un ID unique
+    patient_id = fake.uuid4()
+    liste_id.append(patient_id)
+
+    # Générer des noms homme et femme
+    patient_name_homme = fake.name_male()
+    patient_name_femme = fake.name_female()
+
+    # Choisir aléatoirement un nom parmi les deux
+    patient_names = random.choice([patient_name_homme, patient_name_femme])
+
+    # Déterminer le sexe en fonction du choix
+    if patient_names == patient_name_homme:
+        sexe = "Homme"
+    else:
+        sexe = "Femme"
+
+    # Ajouter le sexe et le nom à leurs listes respectives
+    sex_liste.append(sexe)
+    patient_name_liste.append(patient_names)
+
+# Utilisation de zip() pour associer ID, prénom et sexe
+dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
+
+for i in range (100):
+# Fonction pour générer une observation de pression artérielle
+        def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
+            # Créer une observation FHIR
+            observation = {
+                "id": patient_id,
+                "status": "final",
+                "category": [{
                     "coding": [{
                         "system": "http://terminology.hl7.org/CodeSystem/observation-category",
                         "code": "vital-signs",
                         "display": "Vital Signs"
                     }]
                 }],
-                code={
+                "code": {
                     "coding": [{
                         "system": "http://loinc.org",
                         "code": "85354-9",
                         "display": "Blood pressure"
                     }]
                 },
-                subject={
-                    "reference": f"Patient/{patient.id}",
+                "subject": {
+                    "reference": f"Patient/{patient_id}",
                     "display": patient_name
                 },
-                effectiveDateTime = random_date_str,
-                component=[
+                "effectiveDateTime": random_date_str,  # Date avec fuseau horaire
+                "component": [
                     {
                         "code": {
                             "coding": [{
@@ -75,39 +131,48 @@ for i in range (100):
                         }
                     }
                 ]
-            )
-            
-            return observation.dict()
+            }
 
+            return observation
 
-        # Génération des observations pour plusieurs patients
+    # Générer 10 observations
         fake = Faker()
-
-        patient_id = fake.uuid4() 
-
+        # Générer les données aléatoires pour chaque observation
         systolic = fake.random_int(min=78, max=190)  # Pression systolique
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
-        # les objet date ne sont pas directement serizable en JSON donc il faut la convertir en str tout en suivant la structure année-mois-jour
+        # Générer un delta aléatoire pour la date
+        delta_days = random.randint(0, 3)
+        delta_hours = random.randint(0, 23)
+        delta_minutes = random.randint(0, 59)
+        delta_seconds = random.randint(0, 59)
+        delta = timedelta(days=delta_days, hours=delta_hours, minutes=delta_minutes, seconds=delta_seconds)
 
-        random_date = fake.date_this_decade()
+        # pour chosir un ID aléatoire
 
-        random_date_str = random_date.isoformat()
+        patient_id = random.choice(list(dict_name_id.keys()))  
+        patient_name, sexe = dict_name_id[patient_id]
 
-        observations = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str)
 
-        # # on créer ici un patient avec un nom généré homme ou femme et aléatoire 
-        patient_name_homme = fake.name_male()
-        patient_name_femme = fake.name_female()
+        # Mettre à jour la date actuelle
+        current_date += delta
 
-        patient_name = random.choice([patient_name_homme, patient_name_femme]) 
-        
-        # identification du sexe selon le premom pour indexation sur elastic search
+        # Convertir la date en chaîne au format ISO 8601 avec fuseau horaire UTC
+        random_date_str = current_date.strftime("%Y-%m-%dT%H:%M:%S%z")
 
-        if patient_name == patient_name_homme:
-            sexe = "Homme"
-        else:
-            sexe = "Femme"
+        # Générer l'observation
+        observation = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name)
+        print(observation)
+
+    # Sauvegarder la dernière date dans le fichier
+        with open(file_path, "w") as file:
+            file.write(current_date.strftime("%Y-%m-%dT%H:%M:%S%z"))
+
+
+        # generation du message dans observation
+
+        observations = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name)
+
 
         print(f"Observation générée pour le patient {patient_id}")
 
@@ -132,29 +197,20 @@ for i in range (100):
 
         # Fonction pour détecter les anomalies
         def detect_anomaly(observations):
-            
-            # remarque: ici, on auura tres bien pu faire juste systolic = systolic car tout simplement la valeur systolique que l'on a affecter dans le message FHIR
-            #bah c'est systolic = faker donc pas besoin de le chercher dans le message FHIR car c nous qui genre systolique
-            # mais j'ai ecrit ce code jsute pour voir comment extraire une valeur dans un dictionnaire avec des nested keys ( clée imbrique ( clés dans des clés))
-
-            systolic = observations["component"][0]["valueQuantity"]["value"] # ou systolc = systolic ==> au choix 
-            diastolic = observations["component"][1]["valueQuantity"]["value"] # ou diastolique = diastalic ==> au choix
-
-            
 
             anomaly_type = "tension normale"
     
-            if systolic >= 120 and systolic <= 130 and diastolic <= 80:
+            if systolic >= 120 and systolic <= 129 and diastolic < 80:
                 anomaly_type = "tension élevé"
             
             elif systolic >= 130 and systolic <= 139 and diastolic <= 80 and diastolic <= 89:
                 anomaly_type = "Hypertension de stade 1"
 
+            elif systolic > 180 or diastolic > 120:
+                anomaly_type = "Crise hypertensive (Urgence immédiate)"
+
             elif systolic >= 140 or diastolic >= 90:
                 anomaly_type = "Hypertension de stade 2"
-
-            elif systolic >= 180 or diastolic >= 120:
-                anomaly_type = "Crise hypertensive (Urgence immédiate)"
 
             elif systolic < 90 or diastolic < 60:
                 anomaly_type = "Hypotension"
@@ -167,7 +223,7 @@ for i in range (100):
 
         # Consommateur Kafka
         def consumer_kafka(observations): 
-            c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumer', 'auto.offset.reset': 'earliest'})
+            c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
             c.subscribe(['blood_pressure_topic'])  # Topic Kafka où envoyer les données
 
             while True:
@@ -194,17 +250,13 @@ for i in range (100):
             patient_id, systolic, diastolic, anomaly_type = detect_anomaly(observations)  
 
             # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
-            # on peut dire que c'est pour crée une table sur kibana avec des colonne patient id , systolic ... ( le but d'elasticsearch est d'indexer ( cad de mapper nos donnée en les affectant a une clé ( ici patient id , systolic...) 
-            # donc nos donnée seront affecter a une colonne ce qui facilite sa recherche) puis nous aide à les organiser et les afficher sur kibana)
-            # sa permet de tranformer du data stream en table de donnée qui s'actualise ( donc qui sauvagrde de nouvelle donnée automatiquement selon des condition comme ici ( anomalie) ou non) 
-
-            anomaly_data = {'patient_id': patient_id,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type,'date' : random_date_str, 'year': random_date.year}
+            anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
             
             # j'ai rajouté cette ligne de commande car je recevai beacoup d'erreur 406 donc je essayé d'implémenter
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version2", body=anomaly_data)
+                res = es.index(index="blood_pressure_anomalies_version_final_1", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
             except Exception as e:
@@ -237,4 +289,5 @@ for i in range (100):
         if anomaly_type == "tension normale": 
             print("Observation normale")
             save_normal_data(observations, 'normal_blood_pressure.json')
+
 

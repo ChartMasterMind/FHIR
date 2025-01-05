@@ -10,15 +10,9 @@ import os
 import pytz
 
 # J'ai crée une fonction pour pouvoir simuler n observation de pression artérielle
-import os
-import random
-from datetime import datetime, timedelta
-import pytz  # Pour gérer les fuseaux horaires
-from faker import Faker
 
 file_path = "dernière_date.txt"
 
-file_path = "dernière_date.txt"
 
 # Charger la dernière date sauvegardée
 if os.path.exists(file_path):
@@ -44,7 +38,42 @@ utc_zone = pytz.utc
 if current_date.tzinfo is None:
     current_date = utc_zone.localize(current_date)
 
-for i in range (50):
+# génere 500 id 
+
+fake = Faker()
+
+liste_id = []
+patient_name_liste = []
+sex_liste = []
+
+# Création du dictionnaire vide en dehors de la boucle
+dict_name_id = {}
+for i in range(100):
+    # Générer un ID unique
+    patient_id = fake.uuid4()
+    liste_id.append(patient_id)
+
+    # Générer des noms homme et femme
+    patient_name_homme = fake.name_male()
+    patient_name_femme = fake.name_female()
+
+    # Choisir aléatoirement un nom parmi les deux
+    patient_names = random.choice([patient_name_homme, patient_name_femme])
+
+    # Déterminer le sexe en fonction du choix
+    if patient_names == patient_name_homme:
+        sexe = "Homme"
+    else:
+        sexe = "Femme"
+
+    # Ajouter le sexe et le nom à leurs listes respectives
+    sex_liste.append(sexe)
+    patient_name_liste.append(patient_names)
+
+# Utilisation de zip() pour associer ID, prénom et sexe
+dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
+
+for i in range (1000):
 # Fonction pour générer une observation de pression artérielle
         def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
             # Créer une observation FHIR
@@ -109,8 +138,6 @@ for i in range (50):
     # Générer 10 observations
         fake = Faker()
         # Générer les données aléatoires pour chaque observation
-        patient_id = fake.uuid4()
-        patient_name = fake.name()
         systolic = fake.random_int(min=78, max=190)  # Pression systolique
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
@@ -120,6 +147,12 @@ for i in range (50):
         delta_minutes = random.randint(0, 59)
         delta_seconds = random.randint(0, 59)
         delta = timedelta(days=delta_days, hours=delta_hours, minutes=delta_minutes, seconds=delta_seconds)
+
+        # pour chosir un ID aléatoire
+
+        patient_id = random.choice(list(dict_name_id.keys()))  
+        patient_name, sexe = dict_name_id[patient_id]
+
 
         # Mettre à jour la date actuelle
         current_date += delta
@@ -135,18 +168,6 @@ for i in range (50):
         with open(file_path, "w") as file:
             file.write(current_date.strftime("%Y-%m-%dT%H:%M:%S%z"))
 
-         # on créer ici un patient avec un nom généré et aléatoire 
-        patient_name_homme = fake.name_male()
-        patient_name_femme = fake.name_female()
-
-        patient_name = random.choice([patient_name_homme, patient_name_femme]) 
-
-        # identification du sexe selon le premom pour indexation sur elastic search
-
-        if patient_name == patient_name_homme:
-            sexe = "Homme"
-        else:
-            sexe = "Femme"
 
         # generation du message dans observation
 
@@ -229,13 +250,13 @@ for i in range (50):
             patient_id, systolic, diastolic, anomaly_type = detect_anomaly(observations)  
 
             # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
-            anomaly_data = {'patient_id': patient_id,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
+            anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
             
             # j'ai rajouté cette ligne de commande car je recevai beacoup d'erreur 406 donc je essayé d'implémenter
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
             try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version_test", body=anomaly_data)
+                res = es.index(index="blood_pressure_anomalies_version_final_1", body=anomaly_data)
                 print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
             except Exception as e:
