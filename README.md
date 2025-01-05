@@ -96,9 +96,9 @@ Assurez-vous d'avoir installé et configuré les éléments suivants (de prefér
 - **Elasticsearch 7.9.1**  
 - **Kibana 7.9.1**
 
-Le fichier requirement.txt permet d'installer toutes les bibilothèques necessaires à un projet. 
+Le fichier requirements.txt permet d'installer toutes les bibilothèques necessaires à ce projet. 
 
-Pour eviter tout conflit, vous pouvez aussi installez les bibliothèques Python nécessaires pour des versions comptabiles avec la commande suivante : 
+Pour eviter tout incompatibilité des versions (nottament avec ElasticSearch sur Docker) , vous pouvez installez les bibliothèques Python nécessaires à ce projet avec la commande suivante : 
 ```bash
 pip install -r requirements.txt
 ```
