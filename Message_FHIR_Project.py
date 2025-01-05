@@ -194,7 +194,7 @@ for i in range (500):
 
 
         # Fonction pour détecter les anomalies
-        def detect_anomaly(observations):
+        def detect_anomaly(systolic, diastolic):
 
             anomaly_type = "tension normale"
     
@@ -219,7 +219,7 @@ for i in range (500):
             return anomaly_type
 
         # envoie de message kafka vers elasticsearch pour indexation
-        
+
         def kafka_consumer_vers_elasticsearch(observations):
             c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumer', 'auto.offset.reset': 'earliest'})
             c.subscribe(['blood_pressure_topic'])
@@ -239,7 +239,8 @@ for i in range (500):
             observation = json.loads(msg.value().decode('utf-8'))
             systolic = observation['component'][0]['valueQuantity']['value']
             diastolic = observation['component'][1]['valueQuantity']['value']
-            anomaly_type = detect_anomaly(observation)
+
+            anomaly_type = detect_anomaly(systolic,diastolic)
 
             anomaly_data = {"patient_id": observation['id'],"patient_name": observation['subject']['display'],"systolic_pressure": systolic,"diastolic_pressure": diastolic,"anomaly_type": anomaly_type,"date": random_date_str,'sex': sexe}
 
@@ -269,7 +270,7 @@ for i in range (500):
 
 
         # Vérification et envoi dans Elasticsearch ou sauvegarde du fichier
-        anomaly_type = detect_anomaly(observations)
+        anomaly_type = detect_anomaly(systolic, diastolic)
         if anomaly_type in ["tension élevé" , "Hypertension de stade 1", "Hypertension de stade 2","Crise hypertensive (Urgence immédiate)", "Hypotension"]:
             print(f"Vérification : Anomalie détectée: {anomaly_type}")
             kafka_consumer_vers_elasticsearch(observations)
