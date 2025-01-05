@@ -108,7 +108,13 @@ Ce projet génère des données de pression artérielle systolique (SYS) et dias
 
 Vous pouvez augmenter la période temporelle dans le fichier `Message_FHIR_Project.py` en modifiant la valeur de la ligne suivante ```for i in range(500)```. Cela permet de travailler sur une période plus longue avec le même groupe de patients. Par exemple, lancer le script avec 1000 itérations génère des mesures de pression systolique (SYS) et diastolique (DIA) pour un groupe de patients sur une période moyenne de 6 ans (soit environ 2 à 3 mesures par an pour chaque patient).
 
+## 2. Ajuster lz nombre de patients
 Vous pouvez également augmenter le nombre de patients dans un groupe en modifiant la valeur dans la première boucle ```for i in range(100)```. Cela vous permet d'adapter le nombre de patients en fonction de la période que vous souhaitez étudier.
 
 Si vous voulez une période plus courte, réduisez le nombre d'itérations dans le code (``for i in range(500)``).
 Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
+
+3. Travaillez avec plusuieur groupes :
+Vous pouvez travailez avec plsuieur groupes de patients differents sur differente perdiode. Par exemple, vous pourrais trvailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
+
+
