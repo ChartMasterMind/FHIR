@@ -38,7 +38,6 @@ utc_zone = pytz.utc
 if current_date.tzinfo is None:
     current_date = utc_zone.localize(current_date)
 
-# génere 500 id 
 
 fake = Faker()
 
@@ -73,7 +72,7 @@ for i in range(100):
 # Utilisation de zip() pour associer ID, prénom et sexe
 dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
 
-for i in range (1000):
+for i in range (500):
 # Fonction pour générer une observation de pression artérielle
         def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
             # Créer une observation FHIR
@@ -135,7 +134,6 @@ for i in range (1000):
 
             return observation
 
-    # Générer 10 observations
         fake = Faker()
         # Générer les données aléatoires pour chaque observation
         systolic = fake.random_int(min=78, max=190)  # Pression systolique

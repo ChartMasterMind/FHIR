@@ -1,7 +1,6 @@
 [
     {
-        "resourceType": "Observation",
-        "id": "6e45fb0b-dc59-4c32-8f1c-296265c7163d",
+        "id": "ebaa166c-84e5-4963-9277-af81e486555f",
         "status": "final",
         "category": [
             {
@@ -24,10 +23,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/6e45fb0b-dc59-4c32-8f1c-296265c7163d",
-            "display": "Jamie Howell"
+            "reference": "Patient/ebaa166c-84e5-4963-9277-af81e486555f",
+            "display": "Michael Barton"
         },
-        "effectiveDateTime": "2022-05-11",
+        "effectiveDateTime": "2021-02-07T22:52:56+0000",
         "component": [
             {
                 "code": {
@@ -40,7 +39,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 94.0,
+                    "value": 98,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -57,7 +56,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 72.0,
+                    "value": 75,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -66,8 +65,7 @@
         ]
     },
     {
-        "resourceType": "Observation",
-        "id": "361e5557-8e9e-4e70-93d1-cc6ae63f95a8",
+        "id": "e7bd0f19-48fe-4824-afce-31bc6a138c10",
         "status": "final",
         "category": [
             {
@@ -90,10 +88,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/361e5557-8e9e-4e70-93d1-cc6ae63f95a8",
-            "display": "Christopher Mccarthy"
+            "reference": "Patient/e7bd0f19-48fe-4824-afce-31bc6a138c10",
+            "display": "Brandy Campbell"
         },
-        "effectiveDateTime": "2022-01-23",
+        "effectiveDateTime": "2021-03-21T14:57:40+0000",
         "component": [
             {
                 "code": {
@@ -106,7 +104,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 137.0,
+                    "value": 94,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -123,7 +121,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 86.0,
+                    "value": 66,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -132,8 +130,7 @@
         ]
     },
     {
-        "resourceType": "Observation",
-        "id": "0f7bc2b3-f6e4-4068-90bf-66484ec648da",
+        "id": "21ba7b0f-1f0b-4623-92e0-48b646889475",
         "status": "final",
         "category": [
             {
@@ -156,402 +153,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/0f7bc2b3-f6e4-4068-90bf-66484ec648da",
-            "display": "Samantha Watson"
+            "reference": "Patient/21ba7b0f-1f0b-4623-92e0-48b646889475",
+            "display": "Walter Fritz"
         },
-        "effectiveDateTime": "2021-10-17",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 92.0,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 68.0,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "resourceType": "Observation",
-        "id": "860dbf0f-d0eb-4a62-a482-78ed2b5c1dc5",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/860dbf0f-d0eb-4a62-a482-78ed2b5c1dc5",
-            "display": "Jacob Hernandez"
-        },
-        "effectiveDateTime": "2024-04-23",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 94.0,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 61.0,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "resourceType": "Observation",
-        "id": "8021f989-b232-47d8-9aa7-c7a5ae5e7719",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/8021f989-b232-47d8-9aa7-c7a5ae5e7719",
-            "display": "Christine Matthews"
-        },
-        "effectiveDateTime": "2021-05-20",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 107.0,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 60.0,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "d6ef236e-1ffd-4035-a032-d9624d984942",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/d6ef236e-1ffd-4035-a032-d9624d984942",
-            "display": "Scott Herrera"
-        },
-        "effectiveDateTime": "2020-01-05T19:21:51+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 99,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 73,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "4c0865b3-6130-4384-8465-4c34944ac844",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/4c0865b3-6130-4384-8465-4c34944ac844",
-            "display": "Eddie Pugh"
-        },
-        "effectiveDateTime": "2020-01-11T07:14:10+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 114,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 65,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "ccc42532-d42f-4c32-ac9a-a45579c394a9",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/ccc42532-d42f-4c32-ac9a-a45579c394a9",
-            "display": "Mckenzie Monroe"
-        },
-        "effectiveDateTime": "2020-01-25T13:06:39+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 93,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 87,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "77b4b233-60ad-4175-bd75-aee8f658e408",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/77b4b233-60ad-4175-bd75-aee8f658e408",
-            "display": "Joseph Santiago"
-        },
-        "effectiveDateTime": "2020-02-24T17:58:47+0000",
+        "effectiveDateTime": "2021-04-02T19:22:13+0000",
         "component": [
             {
                 "code": {
@@ -581,7 +186,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 62,
+                    "value": 76,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -590,7 +195,7 @@
         ]
     },
     {
-        "id": "0bec6b5c-5bbd-4361-9f0b-d88ab3fc481e",
+        "id": "4abd1db5-fd1b-40eb-a6a9-384b169929a3",
         "status": "final",
         "category": [
             {
@@ -613,400 +218,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/0bec6b5c-5bbd-4361-9f0b-d88ab3fc481e",
-            "display": "Kevin Wilson"
+            "reference": "Patient/4abd1db5-fd1b-40eb-a6a9-384b169929a3",
+            "display": "Robert Vance"
         },
-        "effectiveDateTime": "2020-02-27T16:04:51+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 104,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 71,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "4f0f3acc-1df1-4e68-9bc3-685a2f9e6978",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/4f0f3acc-1df1-4e68-9bc3-685a2f9e6978",
-            "display": "Jessica Caldwell"
-        },
-        "effectiveDateTime": "2020-03-06T15:29:09+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 114,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 74,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "87fc1490-1118-4832-b494-ed0abac1d64e",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/87fc1490-1118-4832-b494-ed0abac1d64e",
-            "display": "Robert Stewart"
-        },
-        "effectiveDateTime": "2020-03-16T08:40:33+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 95,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 89,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "c5bf2705-4f69-4687-80f5-8a1f813e0f66",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/c5bf2705-4f69-4687-80f5-8a1f813e0f66",
-            "display": "Nicholas Perez"
-        },
-        "effectiveDateTime": "2020-03-28T03:48:04+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 115,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 68,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "6d149b5a-f2aa-44a6-bc74-f316c45e6f84",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/6d149b5a-f2aa-44a6-bc74-f316c45e6f84",
-            "display": "Aaron Sharp"
-        },
-        "effectiveDateTime": "2020-04-04T22:10:21+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 116,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 68,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "5d7fc1e4-c368-42b1-90ca-ffb8d4957947",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/5d7fc1e4-c368-42b1-90ca-ffb8d4957947",
-            "display": "Thomas Dunn"
-        },
-        "effectiveDateTime": "2020-04-11T20:36:54+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 100,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 73,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "771c00c9-e4d3-40f2-ac23-116b25875eb6",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/771c00c9-e4d3-40f2-ac23-116b25875eb6",
-            "display": "John Jones"
-        },
-        "effectiveDateTime": "2020-04-19T00:22:55+0000",
+        "effectiveDateTime": "2021-05-26T00:10:51+0000",
         "component": [
             {
                 "code": {
@@ -1036,7 +251,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 71,
+                    "value": 69,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1045,7 +260,7 @@
         ]
     },
     {
-        "id": "7a9578c9-88dc-4fc5-bbe2-6f014d5df903",
+        "id": "9cf6eb58-e3fc-421b-83eb-04554b77e546",
         "status": "final",
         "category": [
             {
@@ -1068,10 +283,205 @@
             ]
         },
         "subject": {
-            "reference": "Patient/7a9578c9-88dc-4fc5-bbe2-6f014d5df903",
-            "display": "Jamie Jones"
+            "reference": "Patient/9cf6eb58-e3fc-421b-83eb-04554b77e546",
+            "display": "Matthew Kennedy"
         },
-        "effectiveDateTime": "2020-04-20T13:55:55+0000",
+        "effectiveDateTime": "2021-07-17T14:23:09+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 91,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 70,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "c381c2bc-bd87-458a-885e-bae0c977b05a",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/c381c2bc-bd87-458a-885e-bae0c977b05a",
+            "display": "Sheryl Flores"
+        },
+        "effectiveDateTime": "2021-07-25T06:34:06+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 115,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 62,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "75908113-4f42-4389-aae8-8d9b8a316bc7",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/75908113-4f42-4389-aae8-8d9b8a316bc7",
+            "display": "Daniel Blankenship"
+        },
+        "effectiveDateTime": "2021-08-08T03:47:48+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 101,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 64,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "8711f5cd-b744-46d9-81fe-854c8477f72c",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/8711f5cd-b744-46d9-81fe-854c8477f72c",
+            "display": "Stephen Johns"
+        },
+        "effectiveDateTime": "2021-08-22T00:14:19+0000",
         "component": [
             {
                 "code": {
@@ -1101,7 +511,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 69,
+                    "value": 78,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1110,7 +520,7 @@
         ]
     },
     {
-        "id": "a6474c88-ef8d-49e0-89f3-2d865bfd3a04",
+        "id": "c97ce462-a830-4dd9-97c3-a19f570d88ed",
         "status": "final",
         "category": [
             {
@@ -1133,10 +543,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/a6474c88-ef8d-49e0-89f3-2d865bfd3a04",
-            "display": "Aaron Elliott"
+            "reference": "Patient/c97ce462-a830-4dd9-97c3-a19f570d88ed",
+            "display": "Autumn Grant"
         },
-        "effectiveDateTime": "2020-04-23T14:12:10+0000",
+        "effectiveDateTime": "2021-08-23T09:37:18+0000",
         "component": [
             {
                 "code": {
@@ -1149,7 +559,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 111,
+                    "value": 101,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1166,7 +576,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 78,
+                    "value": 82,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1175,7 +585,7 @@
         ]
     },
     {
-        "id": "3d8617b1-731e-438e-8b9d-29efc7f92e5a",
+        "id": "2cd349d1-b707-41c5-80bd-b01d6298d293",
         "status": "final",
         "category": [
             {
@@ -1198,10 +608,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/3d8617b1-731e-438e-8b9d-29efc7f92e5a",
-            "display": "Danielle Lewis"
+            "reference": "Patient/2cd349d1-b707-41c5-80bd-b01d6298d293",
+            "display": "Michael Allen"
         },
-        "effectiveDateTime": "2020-04-28T12:43:45+0000",
+        "effectiveDateTime": "2021-08-25T14:26:20+0000",
         "component": [
             {
                 "code": {
@@ -1214,7 +624,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 116,
+                    "value": 102,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1240,7 +650,7 @@
         ]
     },
     {
-        "id": "9693b7b2-dcbd-4d75-a7aa-d89190810bba",
+        "id": "ec99fd2c-6a62-49ce-835d-aa0dcb5cfe46",
         "status": "final",
         "category": [
             {
@@ -1263,10 +673,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/9693b7b2-dcbd-4d75-a7aa-d89190810bba",
-            "display": "Calvin Williams"
+            "reference": "Patient/ec99fd2c-6a62-49ce-835d-aa0dcb5cfe46",
+            "display": "Allison Sullivan"
         },
-        "effectiveDateTime": "2020-06-12T15:36:38+0000",
+        "effectiveDateTime": "2021-09-15T04:17:51+0000",
         "component": [
             {
                 "code": {
@@ -1279,7 +689,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 119,
+                    "value": 107,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1296,7 +706,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 76,
+                    "value": 61,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1305,7 +715,7 @@
         ]
     },
     {
-        "id": "b3427435-ddd5-4dce-b06b-7893e47a69ce",
+        "id": "d2f1afaf-66ab-46d5-bfb6-78427a9fc670",
         "status": "final",
         "category": [
             {
@@ -1328,10 +738,725 @@
             ]
         },
         "subject": {
-            "reference": "Patient/b3427435-ddd5-4dce-b06b-7893e47a69ce",
-            "display": "Jennifer Wood"
+            "reference": "Patient/d2f1afaf-66ab-46d5-bfb6-78427a9fc670",
+            "display": "Elizabeth Nicholson"
         },
-        "effectiveDateTime": "2020-06-30T05:07:20+0000",
+        "effectiveDateTime": "2021-09-24T04:59:30+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 107,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 73,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "086528a1-b9bd-4aad-8e1d-63fb59d5ee3d",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/086528a1-b9bd-4aad-8e1d-63fb59d5ee3d",
+            "display": "Jason Adams"
+        },
+        "effectiveDateTime": "2021-11-03T10:51:27+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 117,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 89,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "9a9f9a87-7015-4224-8b21-eff6eaf7e66c",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/9a9f9a87-7015-4224-8b21-eff6eaf7e66c",
+            "display": "Danny Moore"
+        },
+        "effectiveDateTime": "2021-11-06T05:16:37+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 100,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 61,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "88190778-9a70-4ea8-97a5-68ce64f2ead4",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/88190778-9a70-4ea8-97a5-68ce64f2ead4",
+            "display": "Adam Benjamin"
+        },
+        "effectiveDateTime": "2021-12-10T05:13:57+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 91,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 63,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "64ba1a11-f884-4173-8ec2-7d1d3e18e4fb",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/64ba1a11-f884-4173-8ec2-7d1d3e18e4fb",
+            "display": "Nicole Burch"
+        },
+        "effectiveDateTime": "2021-12-19T14:44:09+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 90,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 87,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "f078158a-5818-4487-baf5-5d6fb0e6d8e5",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/f078158a-5818-4487-baf5-5d6fb0e6d8e5",
+            "display": "Eric Waller"
+        },
+        "effectiveDateTime": "2022-01-16T07:11:48+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 125,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 89,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "d0bb3e74-445a-4375-ab16-f9da6b012190",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/d0bb3e74-445a-4375-ab16-f9da6b012190",
+            "display": "Mary Randall"
+        },
+        "effectiveDateTime": "2022-01-17T23:45:08+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 94,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 64,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "b1bd3ab5-aa69-4e6e-ba46-68cdb8fd945a",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/b1bd3ab5-aa69-4e6e-ba46-68cdb8fd945a",
+            "display": "Carolyn Bennett"
+        },
+        "effectiveDateTime": "2022-02-20T02:22:01+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 101,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 73,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "3e3335f7-c66f-45d6-b874-589917a0ce3c",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/3e3335f7-c66f-45d6-b874-589917a0ce3c",
+            "display": "Michael Boyd"
+        },
+        "effectiveDateTime": "2022-03-30T18:13:38+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 131,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 88,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "8ea70c97-57ba-48d9-bf56-9c1b495784ac",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/8ea70c97-57ba-48d9-bf56-9c1b495784ac",
+            "display": "Andrea Webb"
+        },
+        "effectiveDateTime": "2022-04-06T11:44:44+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 98,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 82,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "56de85f8-b78e-4151-9514-d66cddedea36",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/56de85f8-b78e-4151-9514-d66cddedea36",
+            "display": "Jennifer Glenn"
+        },
+        "effectiveDateTime": "2022-04-10T05:13:22+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 109,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 71,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "72bf6b39-4fec-47e9-a2ed-2947b2b44349",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/72bf6b39-4fec-47e9-a2ed-2947b2b44349",
+            "display": "Dana Ho"
+        },
+        "effectiveDateTime": "2022-04-13T19:36:16+0000",
         "component": [
             {
                 "code": {
@@ -1370,7 +1495,7 @@
         ]
     },
     {
-        "id": "513143a0-d0dc-4d25-8c10-db51f294c880",
+        "id": "134d261a-1aa2-45e6-86a3-adda26b76c9a",
         "status": "final",
         "category": [
             {
@@ -1393,10 +1518,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/513143a0-d0dc-4d25-8c10-db51f294c880",
-            "display": "Carl Carpenter"
+            "reference": "Patient/134d261a-1aa2-45e6-86a3-adda26b76c9a",
+            "display": "Joshua Collins"
         },
-        "effectiveDateTime": "2020-07-25T19:29:44+0000",
+        "effectiveDateTime": "2022-05-08T13:58:24+0000",
         "component": [
             {
                 "code": {
@@ -1409,7 +1534,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 112,
+                    "value": 106,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1426,7 +1551,7 @@
                     ]
                 },
                 "valueQuantity": {
-                    "value": 78,
+                    "value": 82,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
@@ -1435,7 +1560,7 @@
         ]
     },
     {
-        "id": "b1039ad7-010c-48ae-9dab-daaa572dc039",
+        "id": "c381c2bc-bd87-458a-885e-bae0c977b05a",
         "status": "final",
         "category": [
             {
@@ -1458,205 +1583,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/b1039ad7-010c-48ae-9dab-daaa572dc039",
-            "display": "Corey Davis"
+            "reference": "Patient/c381c2bc-bd87-458a-885e-bae0c977b05a",
+            "display": "Sheryl Flores"
         },
-        "effectiveDateTime": "2020-08-09T01:05:23+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 103,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 88,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "535f4cd2-78ea-49d8-801b-19ed28e4150b",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/535f4cd2-78ea-49d8-801b-19ed28e4150b",
-            "display": "Michael Pearson"
-        },
-        "effectiveDateTime": "2020-09-14T20:04:58+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 105,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 64,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "21c59dc0-c3f4-4bbe-9a5a-c4db8776ee03",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/21c59dc0-c3f4-4bbe-9a5a-c4db8776ee03",
-            "display": "Luke Smith"
-        },
-        "effectiveDateTime": "2020-11-04T12:43:09+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 110,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 78,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "7f3e69b3-e49f-466b-89ab-08abc127411b",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/7f3e69b3-e49f-466b-89ab-08abc127411b",
-            "display": "Kylie Rojas"
-        },
-        "effectiveDateTime": "2020-11-11T18:08:43+0000",
+        "effectiveDateTime": "2022-05-20T05:43:15+0000",
         "component": [
             {
                 "code": {
@@ -1695,7 +1625,7 @@
         ]
     },
     {
-        "id": "35dc9656-b57c-4b5a-8cb8-a1de27030dba",
+        "id": "5875a670-ea48-40b4-96f6-a5338f50f3ed",
         "status": "final",
         "category": [
             {
@@ -1718,400 +1648,10 @@
             ]
         },
         "subject": {
-            "reference": "Patient/35dc9656-b57c-4b5a-8cb8-a1de27030dba",
-            "display": "Ashley Lin"
+            "reference": "Patient/5875a670-ea48-40b4-96f6-a5338f50f3ed",
+            "display": "Charles Mccann"
         },
-        "effectiveDateTime": "2020-11-15T01:19:42+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 97,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 72,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "986946a3-8376-4821-a202-5567a1910746",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/986946a3-8376-4821-a202-5567a1910746",
-            "display": "Amber Martinez"
-        },
-        "effectiveDateTime": "2020-12-12T04:33:14+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 100,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 60,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "66d10f22-21c6-46d2-ba57-5536602e0b5b",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/66d10f22-21c6-46d2-ba57-5536602e0b5b",
-            "display": "Jason Richardson"
-        },
-        "effectiveDateTime": "2020-12-18T12:32:36+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 108,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 73,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "fdc3cbf0-0e7a-47d8-9044-8147dab5ad9f",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/fdc3cbf0-0e7a-47d8-9044-8147dab5ad9f",
-            "display": "Michael Robinson"
-        },
-        "effectiveDateTime": "2020-12-22T05:48:38+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 92,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 77,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "b0a9de02-e3a4-4103-9cd0-b3c59c2bc24c",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/b0a9de02-e3a4-4103-9cd0-b3c59c2bc24c",
-            "display": "Kelly Savage"
-        },
-        "effectiveDateTime": "2020-12-26T10:28:52+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 100,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 88,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "e70a2cf3-ab7e-46a0-bc6c-fa2ab50d7cb4",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/e70a2cf3-ab7e-46a0-bc6c-fa2ab50d7cb4",
-            "display": "Olivia Rios"
-        },
-        "effectiveDateTime": "2020-12-30T16:58:27+0000",
-        "component": [
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8480-6",
-                            "display": "Systolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 114,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            },
-            {
-                "code": {
-                    "coding": [
-                        {
-                            "system": "http://loinc.org",
-                            "code": "8462-4",
-                            "display": "Diastolic Blood Pressure"
-                        }
-                    ]
-                },
-                "valueQuantity": {
-                    "value": 64,
-                    "unit": "mmHg",
-                    "system": "http://unitsofmeasure.org",
-                    "code": "mm[Hg]"
-                }
-            }
-        ]
-    },
-    {
-        "id": "c1ee4b42-cfb8-4fe6-b277-3152518f7dc5",
-        "status": "final",
-        "category": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "vital-signs",
-                        "display": "Vital Signs"
-                    }
-                ]
-            }
-        ],
-        "code": {
-            "coding": [
-                {
-                    "system": "http://loinc.org",
-                    "code": "85354-9",
-                    "display": "Blood pressure"
-                }
-            ]
-        },
-        "subject": {
-            "reference": "Patient/c1ee4b42-cfb8-4fe6-b277-3152518f7dc5",
-            "display": "Allen Fitzgerald"
-        },
-        "effectiveDateTime": "2021-01-14T13:11:57+0000",
+        "effectiveDateTime": "2022-05-24T12:57:34+0000",
         "component": [
             {
                 "code": {
@@ -2141,7 +1681,1502 @@
                     ]
                 },
                 "valueQuantity": {
+                    "value": 82,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "e13c83f8-4d8e-48b0-9358-1affe3a29b44",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/e13c83f8-4d8e-48b0-9358-1affe3a29b44",
+            "display": "Julie Pollard"
+        },
+        "effectiveDateTime": "2022-06-21T03:23:20+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 115,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 79,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "4abd1db5-fd1b-40eb-a6a9-384b169929a3",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/4abd1db5-fd1b-40eb-a6a9-384b169929a3",
+            "display": "Robert Vance"
+        },
+        "effectiveDateTime": "2022-08-13T07:42:12+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 115,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 83,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "16e688a6-d67e-4c0b-a1df-58664847c6f9",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/16e688a6-d67e-4c0b-a1df-58664847c6f9",
+            "display": "Anna Carter"
+        },
+        "effectiveDateTime": "2022-09-09T23:44:27+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 127,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 89,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "a9f5189c-7b22-4fe2-bd6e-e3ad0d93450c",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/a9f5189c-7b22-4fe2-bd6e-e3ad0d93450c",
+            "display": "Tonya Moore"
+        },
+        "effectiveDateTime": "2022-09-21T06:53:04+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 101,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 75,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "c9f8e3d2-3b8c-4a27-b47b-8c3698d09401",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/c9f8e3d2-3b8c-4a27-b47b-8c3698d09401",
+            "display": "Monique Edwards"
+        },
+        "effectiveDateTime": "2022-10-08T02:04:58+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 109,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 67,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "a9f5189c-7b22-4fe2-bd6e-e3ad0d93450c",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/a9f5189c-7b22-4fe2-bd6e-e3ad0d93450c",
+            "display": "Tonya Moore"
+        },
+        "effectiveDateTime": "2022-10-17T23:07:18+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 108,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 87,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "a04ac659-bbd0-4a3d-8ac6-711d98dc8606",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/a04ac659-bbd0-4a3d-8ac6-711d98dc8606",
+            "display": "Cynthia Roach"
+        },
+        "effectiveDateTime": "2022-12-12T06:54:22+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 112,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 80,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "6c3b2a93-f8c4-4fc1-9bc1-03a145f25c42",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/6c3b2a93-f8c4-4fc1-9bc1-03a145f25c42",
+            "display": "John Smith"
+        },
+        "effectiveDateTime": "2022-12-29T07:16:04+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 106,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 88,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "fbdb5cf5-530a-418b-98f7-f9f48b147bc1",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/fbdb5cf5-530a-418b-98f7-f9f48b147bc1",
+            "display": "Patricia Hurley"
+        },
+        "effectiveDateTime": "2023-01-10T12:28:50+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 114,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 75,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "40c4a278-4f13-45ce-8bc9-19d33fe84c03",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/40c4a278-4f13-45ce-8bc9-19d33fe84c03",
+            "display": "Ruth Flowers"
+        },
+        "effectiveDateTime": "2023-01-20T07:22:00+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 91,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 70,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "28c2898a-a4b0-4f61-ac18-0fc9de82dac2",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/28c2898a-a4b0-4f61-ac18-0fc9de82dac2",
+            "display": "Suzanne Robinson"
+        },
+        "effectiveDateTime": "2023-01-25T13:33:46+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 115,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 66,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "6c3b2a93-f8c4-4fc1-9bc1-03a145f25c42",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/6c3b2a93-f8c4-4fc1-9bc1-03a145f25c42",
+            "display": "John Smith"
+        },
+        "effectiveDateTime": "2023-02-19T19:56:32+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 98,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 70,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "d90acb52-5648-4054-9177-1e7f0e38d790",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/d90acb52-5648-4054-9177-1e7f0e38d790",
+            "display": "Kevin Maynard"
+        },
+        "effectiveDateTime": "2023-03-01T09:13:38+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 95,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 83,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "28c2898a-a4b0-4f61-ac18-0fc9de82dac2",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/28c2898a-a4b0-4f61-ac18-0fc9de82dac2",
+            "display": "Suzanne Robinson"
+        },
+        "effectiveDateTime": "2023-04-01T18:54:56+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 137,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
                     "value": 84,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "9ceff27a-ca01-47f7-a5c0-528f005ed848",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/9ceff27a-ca01-47f7-a5c0-528f005ed848",
+            "display": "Joseph Huff"
+        },
+        "effectiveDateTime": "2023-05-10T08:46:21+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 105,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 86,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "134d261a-1aa2-45e6-86a3-adda26b76c9a",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/134d261a-1aa2-45e6-86a3-adda26b76c9a",
+            "display": "Joshua Collins"
+        },
+        "effectiveDateTime": "2023-05-13T13:19:53+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 101,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 67,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "58635dfe-3221-4734-86d6-622283c426c3",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/58635dfe-3221-4734-86d6-622283c426c3",
+            "display": "James Ali"
+        },
+        "effectiveDateTime": "2023-05-18T20:15:09+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 127,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 87,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "e4bf6029-cb0c-42be-985d-6fa6f5cb57d9",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/e4bf6029-cb0c-42be-985d-6fa6f5cb57d9",
+            "display": "Todd Black"
+        },
+        "effectiveDateTime": "2023-06-15T16:02:57+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 120,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 88,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "eddb7287-10c6-440d-8ee7-527d6fe83910",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/eddb7287-10c6-440d-8ee7-527d6fe83910",
+            "display": "Steven Davis"
+        },
+        "effectiveDateTime": "2023-06-24T06:20:51+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 104,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 80,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "eb151b3f-0473-4c4a-954b-57740f4c07fa",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/eb151b3f-0473-4c4a-954b-57740f4c07fa",
+            "display": "Jacqueline Vazquez"
+        },
+        "effectiveDateTime": "2023-09-07T09:02:19+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 135,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 84,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "2cd349d1-b707-41c5-80bd-b01d6298d293",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/2cd349d1-b707-41c5-80bd-b01d6298d293",
+            "display": "Michael Allen"
+        },
+        "effectiveDateTime": "2023-10-21T19:56:08+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 114,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 73,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "9a9f9a87-7015-4224-8b21-eff6eaf7e66c",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/9a9f9a87-7015-4224-8b21-eff6eaf7e66c",
+            "display": "Danny Moore"
+        },
+        "effectiveDateTime": "2023-11-08T09:53:59+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 114,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 62,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ]
+    },
+    {
+        "id": "5875a670-ea48-40b4-96f6-a5338f50f3ed",
+        "status": "final",
+        "category": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "vital-signs",
+                        "display": "Vital Signs"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding": [
+                {
+                    "system": "http://loinc.org",
+                    "code": "85354-9",
+                    "display": "Blood pressure"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "Patient/5875a670-ea48-40b4-96f6-a5338f50f3ed",
+            "display": "Charles Mccann"
+        },
+        "effectiveDateTime": "2023-11-16T09:28:08+0000",
+        "component": [
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 112,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            },
+            {
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic Blood Pressure"
+                        }
+                    ]
+                },
+                "valueQuantity": {
+                    "value": 77,
                     "unit": "mmHg",
                     "system": "http://unitsofmeasure.org",
                     "code": "mm[Hg]"
