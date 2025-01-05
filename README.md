@@ -79,9 +79,9 @@ Ce repository contient les fichiers suivants :
    - Fichier txt contenant les librairies nécessaires à l'execution du script principal.
 
 6.  **[DashBoard_Apercu_des_données.png](./DashBoard_Kibana/DashBoard_Apercu_des_données.png)**
-   - Dashboard kibana contenant les données générées
+   - Dashboard kibana contenant les données générées par le script principal
 
-7. **[DashBoard_Données_filtrées_pour_un_patient.png](./DashBoard_Kibana/DashBoard_Données_filtrées_pour_un_patient.png)**
+8. **[DashBoard_Données_filtrées_pour_un_patient.png](./DashBoard_Kibana/DashBoard_Données_filtrées_pour_un_patient.png)**
    - Dashboard kibana contenant les données générées pour un seul patient (suivi de la tension artérielle d'un patient dans le temps)
 ---
 
