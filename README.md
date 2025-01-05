@@ -89,7 +89,7 @@ Ce repository contient les fichiers suivants :
 
 ### **Prérequis**  
 
-Assurez-vous d'avoir installé et configuré les éléments suivants (de preférence sur Docker pour Kafka, ElasticSearch et Kibana)  :  
+Assurez-vous d'avoir installé et configuré les éléments suivants (de preférence sur Docker)  :  
 - **Python 3.x**  
 - **Kafka 6.2.0**
 - **Zookeeper 6.2.0**  
