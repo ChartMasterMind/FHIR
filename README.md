@@ -71,10 +71,10 @@ Ce repository contient les fichiers suivants :
 3. **[normal_blood_pressure.json](./normal_blood_pressure.json)**  
    - Exemple de fichier JSON contenant des messages FHIR de patients avec des pressions artérielles normales.
 
-4.**[dernière_date.txt](./dernière_date.txt)**
+4. **[dernière_date.txt](./dernière_date.txt)**
    - Exemple de fichier txt contenant la dernière date de la dernière observation génerer par le code pour avoir recommencer a cette date à chaque relance du code.
 
-5.**[requirements.txt](./requirements.txt])**
+5. **[requirements.txt](./requirements.txt])**
 - fichier txt contenant les librairies nécessaires à l'execution du code.
 
 ---
