@@ -72,7 +72,7 @@ Ce repository contient les fichiers suivants :
    - Exemple de fichier JSON contenant des messages FHIR de patients avec des pressions artérielles normales.
 
 4. **[dernière_date.txt](./dernière_date.txt)**
-   - Fichier texte contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de lancer le code avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe.
+   - Exemple de Fichier texte qui est crée apres l'éxecution du code et contenant la dernière date de la dernière observation générée par le code : Ce fichier permet de relancer le code à partir de cette date à chaque exécution. Cela évite de lancer le code avec 1000 itérations si votre ordinateur est assez lent et est également utile pour travailler avec de nouveaux groupes de patients. En effet, chaque nouveau groupe est généré à chaque exécution sans écraser l'ancien groupe.
 
 
 5. **[requirements.txt](./requirements.txt)**
