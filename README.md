@@ -114,7 +114,7 @@ Vous pouvez également augmenter le nombre de patients dans un groupe en modifia
 Si vous voulez une période plus courte, réduisez le nombre d'itérations dans le code (``for i in range(500)``).
 Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
 
-## **3. Travaillez avec plusuieur groupes :**
+## **3. Travaillez avec plusieurs groupes :**
 Vous pouvez travailez avec plsuieur groupes de patients differents sur differente perdiode. Par exemple, vous pourrais trvailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
 
 
