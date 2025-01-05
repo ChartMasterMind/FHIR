@@ -109,7 +109,7 @@ pip install -r requirements.txt
 
 Vous pouvez augmenter la période temporelle dans le fichier `Message_FHIR_Project.py` en modifiant la valeur dans la ligne `for i in range(500)`. Cela permet de travailler sur une période plus longue avec le même groupe de patients.
 
-- Par exemple, lancer le script avec 1000 itérations génère des mesures de pression SYS et DIA pour un seul groupe de patients sur une période moyenne de **6 ans** (soit environ **2 à 3 mesures par an** pour chaque patient).
+- Par exemple, lancer le script avec 1000 itérations génère des mesures de pression SYS et DIA pour un seul groupe de patients sur une période moyenne de **6 ans** (soit environ **1 à 2 mesures par an**  pour chaque patient).
 
 ## 2. Ajuster le nombre de patients générés
 
