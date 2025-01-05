@@ -1,3 +1,6 @@
+
+
+
 from faker import Faker
 from fhir.resources.observation import Observation
 from fhir.resources.patient import Patient
@@ -219,6 +222,7 @@ for i in range (500):
             return anomaly_type
 
 
+        # Consommateur Kafka
         def kafka_consumer_vers_elasticsearch(observations):
             c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumer', 'auto.offset.reset': 'earliest'})
             c.subscribe(['blood_pressure_topic'])
