@@ -75,7 +75,6 @@ for i in range(100):
 dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
 
 for i in range (500):
-for i in range (500):
 # Fonction pour générer une observation de pression artérielle
         def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
             # Créer une observation FHIR
@@ -187,7 +186,7 @@ for i in range (500):
             })
 
             OBS_JSON = json.dumps(observations)  # Convertir le dict en JSON, nécessaire pour produire avec Kafka
-            producer.produce('blood_pressure_topic_6', value=OBS_JSON) # definition de notre topic kafka où envoyer les données.
+            producer.produce('blood_pressure_topic_7', value=OBS_JSON) # definition de notre topic kafka où envoyer les données.
 
             print("Observation envoyée à Kafka")
             producer.flush()
@@ -229,7 +228,7 @@ for i in range (500):
         # Consommateur Kafka , envoie de message pour notre serveur elasticsearch
         def consumer_kafka(observations): 
             c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
-            c.subscribe(['blood_pressure_topic_6'])  # Topic Kafka où sont stocker les données du producteur
+            c.subscribe(['blood_pressure_topic_7'])  # Topic Kafka où sont stocker les données du producteur
 
             while True:
                 msg = c.poll(3.0)
