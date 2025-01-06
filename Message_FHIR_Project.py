@@ -255,7 +255,7 @@ for i in range (500):
             systolic = msg['component'][0]['valueQuantity']['value']
             diastolic = msg['component'][1]['valueQuantity']['value']
             patient_id = msg['id']
-            sexe , patient_name = dict_name_id[msg["id"]]
+            patient_name, sexe = dict_name_id[msg["id"]]
             random_date_str = msg["effectiveDateTime"]
 
             anomaly_type = detect_anomaly(msg)
