@@ -34,7 +34,7 @@ if os.path.exists(file_path):
 else:
     current_date = datetime(2020, 1, 1, 0, 0)  # Date par défaut avec heure à 00:00
 
-# Appliquer le fuseau horaire UTC si nécessaire
+# J'ai appliquer ici un fuseau horaire UTC 
 utc_zone = pytz.utc
 if current_date.tzinfo is None:
     current_date = utc_zone.localize(current_date)
@@ -73,7 +73,7 @@ for i in range(100):
 # Utilisation de zip() pour associer ID, prénom et sexe
 dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
 
-for i in range (30):
+for i in range (500):
 # Fonction pour générer une observation de pression artérielle
         def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
             # Créer une observation FHIR
@@ -185,7 +185,7 @@ for i in range (30):
             })
 
             OBS_JSON = json.dumps(observations)  # Convertir le dict en JSON, nécessaire pour produire avec Kafka
-            producer.produce('blood_pressure_topic', value=OBS_JSON)
+            producer.produce('blood_pressure_topic_6', value=OBS_JSON) # definition de notre topic kafka où envoyer les données.
 
             print("Observation envoyée à Kafka")
             producer.flush()
@@ -197,22 +197,22 @@ for i in range (30):
         # Fonction pour détecter les anomalies
         def detect_anomaly(observation):
 
-            systol1c = observation['component'][0]['valueQuantity']['value']
-            diastol1c = observation['component'][1]['valueQuantity']['value']
+            systolic = observation['component'][0]['valueQuantity']['value']
+            diastolic = observation['component'][1]['valueQuantity']['value']
 
             anomaly_type = "tension normale"
     
             if systolic >= 120 and systolic <= 129 and diastolic < 80:
                 anomaly_type = "tension élevé"
-            
-            elif systolic >= 130 and systolic <= 139 and diastolic <= 80 and diastolic <= 89:
-                anomaly_type = "Hypertension de stade 1"
 
             elif systolic > 180 or diastolic > 120:
                 anomaly_type = "Crise hypertensive (Urgence immédiate)"
-
+            
             elif systolic >= 140 or diastolic >= 90:
                 anomaly_type = "Hypertension de stade 2"
+                
+            elif systolic >= 130 and systolic <= 139 or diastolic >= 80 and diastolic <= 89:
+                anomaly_type = "Hypertension de stade 1"
 
             elif systolic < 90 or diastolic < 60:
                 anomaly_type = "Hypotension"
@@ -223,13 +223,13 @@ for i in range (30):
             return anomaly_type
 
 
-        # Consommateur Kafka
+        # Consommateur Kafka , envoie de message pour notre serveur elasticsearch
         def consumer_kafka(observations): 
             c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
-            c.subscribe(['blood_pressure_topic'])  # Topic Kafka où envoyer les données
+            c.subscribe(['blood_pressure_topic_6'])  # Topic Kafka où sont stocker les données du producteur
 
             while True:
-                msg = c.poll(1.0)
+                msg = c.poll(3.0)
             
                 if msg is None:
                     break
@@ -242,31 +242,43 @@ for i in range (30):
 
             c.close()
 
-        # Connexion à Elasticsearch
+        # Connexion à Elasticsearch et indexation des données
             es = Elasticsearch()
-
-        
-            anomaly_type = detect_anomaly(observations) 
 
             msg = json.loads(msg.value().decode('utf-8'))
 
-            systol1c = msg['component'][0]['valueQuantity']['value']
-            diastol1c = msg['component'][1]['valueQuantity']['value']
+            anomaly_type = detect_anomaly(msg)
 
-            anomaly_type = detect_anomaly(observation) 
+            systolic = msg['component'][0]['valueQuantity']['value']
+            diastolic = msg['component'][1]['valueQuantity']['value']
+            patient_id = msg['id']
+            sexe , patient_name = dict_name_id[msg["id"]]
+            random_date_str = msg["effectiveDateTime"]
 
-            # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana
-            anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
+            anomaly_type = detect_anomaly(msg)
+
+            anomaly_type = detect_anomaly(observations)
+            if anomaly_type in ["tension élevé" , "Hypertension de stade 1", "Hypertension de stade 2","Crise hypertensive (Urgence immédiate)", "Hypotension"]:
+                print(f"Vérification : Anomalie détectée: {anomaly_type}")
+
+                anomaly_type = detect_anomaly(msg)
+            
+            # Préparation des données d'anomalie, pour cela je crée un dictionnaire qui va contenir toute les valeurs dont on aura besoin pour visualiser nos donnée sur kibana.
+                anomaly_data = {'patient_id': patient_id,'patient_name': patient_name ,'systolic_pressure': systolic, 'diastolic_pressure': diastolic, 'anomaly_type': anomaly_type, 'date': random_date_str, 'sex': sexe}
             
             # j'ai rajouté cette ligne de commande car je recevai beacoup d'erreur 406 donc je essayé d'implémenter
             # une fonctionalité qui me permet de savoir qu'elle erreur serait retourner
-            try:
+                try:
                 # Indexation des données dans Elasticsearch
-                res = es.index(index="blood_pressure_anomalies_version_test", body=anomaly_data)
-                print(f"Document indexé dans Elasticsearch : {res['_id']}")
+                    res = es.index(index="blood_pressure_anomalies_version_test_test", body=anomaly_data)
+                    print(f"Document indexé dans Elasticsearch : {res['_id']}")
 
-            except Exception as e:
-                print(f"Erreur lors de l'indexation : {e}")
+                except Exception as e:
+                    print(f"Erreur lors de l'indexation : {e}")
+            
+            if anomaly_type == "tension normale": 
+                print("Observation normale")
+                save_normal_data(observations, 'normal_blood_pressure.json')
 
 
         def save_normal_data(observations, filename):
@@ -287,11 +299,4 @@ for i in range (30):
             print(f"Observation normale sauvegardée dans {filename}")
 
 
-        # Vérification et envoi dans Elasticsearch ou sauvegarde du fichier
-        anomaly_type = detect_anomaly(observations)
-        if anomaly_type in ["tension élevé" , "Hypertension de stade 1", "Hypertension de stade 2","Crise hypertensive (Urgence immédiate)", "Hypotension"]:
-            print(f"Vérification : Anomalie détectée: {anomaly_type}")
-            consumer_kafka(observations)
-        if anomaly_type == "tension normale": 
-            print("Observation normale")
-            save_normal_data(observations, 'normal_blood_pressure.json')
+        consumer_kafka(observations)
