@@ -35,6 +35,7 @@ else:
     current_date = datetime(2020, 1, 1, 0, 0)  # Date par défaut avec heure à 00:00
 
 # J'ai appliquer ici un fuseau horaire UTC 
+# J'ai appliquer ici un fuseau horaire UTC 
 utc_zone = pytz.utc
 if current_date.tzinfo is None:
     current_date = utc_zone.localize(current_date)
@@ -73,6 +74,7 @@ for i in range(100):
 # Utilisation de zip() pour associer ID, prénom et sexe
 dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
 
+for i in range (500):
 for i in range (500):
 # Fonction pour générer une observation de pression artérielle
         def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
@@ -224,6 +226,7 @@ for i in range (500):
 
 
         # Consommateur Kafka , envoie de message pour notre serveur elasticsearch
+        # Consommateur Kafka , envoie de message pour notre serveur elasticsearch
         def consumer_kafka(observations): 
             c = Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'python-consumers', 'auto.offset.reset': 'earliest'})
             c.subscribe(['blood_pressure_topic_6'])  # Topic Kafka où sont stocker les données du producteur
@@ -242,6 +245,7 @@ for i in range (500):
 
             c.close()
 
+        # Connexion à Elasticsearch et indexation des données
         # Connexion à Elasticsearch et indexation des données
             es = Elasticsearch()
 
