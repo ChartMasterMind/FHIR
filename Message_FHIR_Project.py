@@ -141,7 +141,7 @@ for i in range (500):
         systolic = fake.random_int(min=78, max=190)  # Pression systolique
         diastolic = fake.random_int(min=40, max=130)  # Pression diastolique
 
-        # Générer un delta aléatoire pour la date
+        # je génére ici une date aléatoire pour la variable date
         delta_days = random.randint(0, 3)
         delta_hours = random.randint(0, 23)
         delta_minutes = random.randint(0, 59)
@@ -179,11 +179,7 @@ for i in range (500):
 
         # Envoyer les messages vers notre topics Kafka
         def produce_to_kafka(observations):
-            producer = Producer({
-                'bootstrap.servers': 'localhost:9092',  # Adresse du serveur Kafka
-                'group.id': 'python-consumer',
-                'auto.offset.reset': 'earliest'
-            })
+            producer = Producer({'bootstrap.servers': 'localhost:9092'})
 
             OBS_JSON = json.dumps(observations)  # Convertir le dict en JSON, nécessaire pour produire avec Kafka
             producer.produce('blood_pressure_topic_7', value=OBS_JSON) # definition de notre topic kafka où envoyer les données.
@@ -255,7 +251,7 @@ for i in range (500):
             systolic = msg['component'][0]['valueQuantity']['value']
             diastolic = msg['component'][1]['valueQuantity']['value']
             patient_id = msg['id']
-            sexe , patient_name = dict_name_id[msg["id"]]
+            patient_name , sexe = dict_name_id[msg["id"]]
             random_date_str = msg["effectiveDateTime"]
 
             anomaly_type = detect_anomaly(msg)
