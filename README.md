@@ -117,6 +117,6 @@ Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
 ## **3. Travaillez avec plusieurs groupes :**
 Vous pouvez travailez avec plusieurs groupes de patients differents sur differentes perdiodes. Par exemple, vous pourrais trvailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
 
-## **4. erreur courante :**
+## **4. Les Erreurs courantes :**
 
-Parfois le code ne voudra pas ce lancer ou vous donnera des données fause ou mal indéxé. il faudra donc changer les topics kafka.
+Parfois le code ne voudra pas ce lancer , vous retournera une erreur sur la ligne ``sexe , patient_name = dict_name_id[msg["id"]]`` ou vous donnera des données fause ou mal indéxé. Il vous faudra donc changer les topics kafka par un autre nom à chaque réexécution du code.
