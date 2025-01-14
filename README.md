@@ -84,11 +84,17 @@ Ce repository contient les fichiers suivants :
    -  Recupération et traitements des données sur Kafka et indexation des donnée des message FHIR contenant des anomalies dans Elasticsearch. Une autre fonction permet aussi de conserver les données normales dans le fichier **[normal_blood_pressure.json](./normal_blood_pressure.json)**
   
 8. **[lancement.py](./lancement.py)**
-   - Script qui permet de lancer simultanement les 3 scripts dont :  **[Message_FHIR_Project.py](./Message_FHIR_Project.py)**, **[product.py](./product.py)** et [consumer.py](./consumer.py)**
+   - Script qui permet de lancer simultanement les 3 scripts dont :  **[Message_FHIR_Project.py](./Message_FHIR_Project.py)**, **[product.py](./product.py)** et **[consumer.py](./consumer.py)**
   
 9. **[docker-compose.yml](./docker-compose.yml)**
     - fichier qui permet d'installer et de conteneuriser les services Kibana, elasticsearch, kafka et zookeeper sur Docker Desktop
----
+      
+10.**[DashBoard_Apercu_des_données.png](./DashBoard_Apercu_des_données.png)**
+   - Dashboard qui représente les données de pression artérielle normale pour un groupe de patients
+
+11.**[DashBoard_Données_filtrées_pour_un_patient.png](./DashBoard_Données_filtrées_pour_un_patient.png)**
+   - Dashboard qui représente les données de pression artérielle normale pour un seul patient pour un suivi medicale par exemple
+
 
 ## **Instructions d’Utilisation**
 
