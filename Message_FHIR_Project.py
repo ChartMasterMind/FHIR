@@ -138,8 +138,8 @@ for i in range (500):
                     }
                 ]
             }
-
-            return observation
+        
+            return json.dumps(observation)
 
         fake = Faker()
         # Générer les données aléatoires pour chaque observation
