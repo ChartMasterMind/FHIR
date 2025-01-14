@@ -63,7 +63,7 @@ Développer une solution complète pour analyser et traiter les données de pres
 Ce repository contient les fichiers suivants :  
 
 1. **[Message_FHIR_Project.py](./Message_FHIR_Project.py)**  
-   - Script principal générant des messages FHIR, publiant les données sur Kafka et indexant les anomalies dans Elasticsearch.  
+   - Script principal générant des messages FHIR
 
 2. **[Message_FHIR_Project_explication.py](./Message_FHIR_Project_explication.py)**  
    - Fichier d'explication détaillant le fonctionnement du script principal.  
@@ -76,6 +76,12 @@ Ce repository contient les fichiers suivants :
 
 5. **[requirements.txt](./requirements.txt)**  
    - Fichier texte contenant les librairies nécessaires à l'exécution du script principal.
+
+6. **[ptoduct.py](./product.py)**
+   - Fonction qui permet de recupérer les message FHIR et de les conserver dans un topics Kafka
+     
+7. **[consumer.py](./consumer.py)**
+   -  Recupération et traitements des données sur Kafka et indexation des donnée des message FHIR contenant des anomalies dans Elasticsearch. Une autre fonction permet aussi de conserver les données normales dans le fichier **[normal_blood_pressure.json](./normal_blood_pressure.json)** 
 
 ---
 
@@ -90,15 +96,22 @@ Assurez-vous d'avoir installé et configuré les éléments suivants (de préfé
 - **Elasticsearch 7.9.1**  
 - **Kibana 7.9.1**
 
+# Comment Lancer les script
+
+## **1. Installer et lancer Docker
+
+## **2. Crée un répertoire contenant tout les fichiers de ce github
+à l'aide de git clone par exemple
+
+## **3. Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement
+
 Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet.
 
-Pour éviter tout conflit, vous pouvez aussi installer les bibliothèques Python nécessaires pour des versions compatibles avec la commande suivante :
+Donc pour éviter tout conflit, vous devez installer les bibliothèques Python nécessaires pour des versions compatibles en écrivant la commande suivante sur votre terminal :
 
 ```bash
 pip install -r requirements.txt
 ```
-
-### **instruction d'usage**
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
 
