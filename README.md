@@ -109,16 +109,19 @@ Assurez-vous d'avoir installé et configuré les éléments suivants (de préfé
 
 # Comment Lancer les script
 
-## **1. Installer et lancer Docker Desktop
+## **1. Installer et lancer Docker Desktop**
+
 Vous pouvez trouver le lien de Docker Desktop à cette adresse : https://www.docker.com/products/docker-desktop/
 
-## **2. Crée un répertoire contenant tout les fichiers de ce github
+## **2. Crée un répertoire contenant tout les fichiers de ce github**
+
 Vous pouvez par exemple exporter ce repository GitHub sur votre machine local à l'aide de cette commande : 
 ```bash
 git clone https://github.com/ChartMasterMind/FHIR.git
 ```
 
-## **3. Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement
+## **3. Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**
+
 Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet.
 
 Donc pour éviter tout conflit, vous devez installer les bibliothèques Python nécessaires pour des versions compatibles en écrivant la commande suivante sur votre terminal :
@@ -127,9 +130,17 @@ Donc pour éviter tout conflit, vous devez installer les bibliothèques Python n
 pip install -r requirements.txt
 ```
 
-## **4. Installer Kibana, elasticsearch, kafka et zookeeper sur Docker
+## **4. Installer Kibana, elasticsearch, kafka et zookeeper sur Docker**
 
 Cette étape vous permettra d'installer Kibana, Elasticsearch, Kafka et Zookeeper dans des conteneurs, ce qui rend l'installation et la gestion de ces services plus faciles. Le projet contient un fichier docker-compose.yml qui vous aide à configurer et lancer ces services en quelques commandes simples. Il vous suffit de suivre les instructions dans ce fichier pour démarrer rapidement tous les services nécessaires.
+
+Pour cela, il vous faut lancer docker desktop et aller sur leur termnal intégré puis aller jusqu'au répertoire de travail (dossier qui contient le fichier **[docker-compose.yml](./docker-compose.yml)**) et taper la commande : 
+`docker compose -p blood_pressure_project up`
+
+Puis lancé manuellement les conteneurs (recommandée) ou bien les lancés avec la commande:
+`docker compose start`
+
+
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
 
