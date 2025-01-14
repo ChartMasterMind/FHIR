@@ -90,15 +90,21 @@ Assurez-vous d'avoir installé et configuré les éléments suivants (de préfé
 - **Elasticsearch 7.9.1**  
 - **Kibana 7.9.1**
 
+# Comment Lancer les script
+
+## **1. Installer et lancer Docker
+
+## **2. Crée un répertoire contenant tout les fichiers de ce github
+à l'aide de git clone par exemple
+
+## **3. telecharger toute les biblothèques nécessaire à l'aide du fichier requirement
 Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet.
 
-Pour éviter tout conflit, vous pouvez aussi installer les bibliothèques Python nécessaires pour des versions compatibles avec la commande suivante :
+Pour éviter tout conflit, vous pouvez aussi installer les bibliothèques Python nécessaires pour des versions compatibles en écrivant la commande suivante sur votre terminal :
 
 ```bash
 pip install -r requirements.txt
 ```
-
-### **instruction d'usage**
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
 
