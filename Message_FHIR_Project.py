@@ -79,7 +79,7 @@ dict_name_id = dict(zip(liste_id, zip(patient_name_liste, sex_liste)))
 
 
 
-for i in range (500):
+for i in range (100):
 # Fonction pour générer une observation de pression artérielle
         def generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name):
             # Créer une observation FHIR
