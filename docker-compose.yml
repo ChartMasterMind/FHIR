@@ -1,0 +1,115 @@
+
+
+services: 
+
+  elasticsearch:
+    image: elasticsearch:7.9.1
+    container_name: elasticsearch_project
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - action.destructive_requires_name=true
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - discovery.type=single-node
+      - transport.host=0.0.0.0
+      - http.host=0.0.0.0
+      - discovery.zen.minimum_master_nodes=1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      net_es:
+        ipv4_address: 171.30.0.2
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  kibana:
+    image: kibana:7.9.1
+    container_name: kibana_project
+    environment:
+      I18N_LOCALE: fr-FR
+    restart: always
+    ports:
+      - "5601:5601"
+    networks:
+      net_es:
+        ipv4_address: 171.30.0.3
+    depends_on:
+      - elasticsearch
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:6.2.0
+    container_name: zookeeper_project
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      net_kafka_nifi:
+        ipv4_address: 171.21.0.9
+
+  kafka:
+    image: confluentinc/cp-kafka:6.2.0
+    container_name: kafka_project
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"  
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+      KAFKA_BROKER_ID: 1
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_CONFLUENT_BALANCER_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      BOOTSTRAP_SERVERS: kafka:9092
+    networks:
+      net_kafka_nifi:
+        ipv4_address: 171.21.0.10
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    container_name: kafka-ui_project
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - zookeeper
+      - kafka
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: "kafka:29092"
+      KAFKA_CLUSTERS_0_ZOOKEEPER: "zookeeper:2181"
+      DYNAMIC_CONFIG_ENABLED: "true"
+    networks:
+      net_kafka_nifi:
+        ipv4_address: 171.21.0.11
+
+networks:
+  net_es:
+    ipam:
+      driver: default
+      config:
+        - subnet: 171.30.0.0/16
+        
+  net_kafka_nifi:
+    ipam:
+      driver: default
+      config:
+        - subnet: 171.21.0.0/16
