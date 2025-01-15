@@ -165,9 +165,6 @@ for i in range (500):
         # Convertir la date en chaîne au format ISO 8601 avec fuseau horaire UTC
         random_date_str = current_date.strftime("%Y-%m-%dT%H:%M:%S%z")
 
-        # Générer l'observation
-        observation = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name)
-        print(observation)
 
     # Sauvegarder la dernière date dans le fichier
         with open(file_path, "w") as file:
@@ -177,7 +174,6 @@ for i in range (500):
         # generation du message dans observation
 
         observations = generate_blood_pressure_observation(patient_id, systolic, diastolic, random_date_str, patient_name)
-
 
         print(f"Observation générée pour le patient {patient_id}")
 
