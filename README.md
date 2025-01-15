@@ -134,11 +134,16 @@ pip install -r requirements.txt
 
 Cette étape vous permettra d'installer Kibana, Elasticsearch, Kafka et Zookeeper dans des conteneurs, ce qui rend l'installation et la gestion de ces services plus faciles. Le projet contient un fichier docker-compose.yml qui vous aide à configurer et lancer ces services en quelques commandes simples. Il vous suffit de suivre les instructions dans ce fichier pour démarrer rapidement tous les services nécessaires.
 
-Pour cela, il vous faut lancer docker desktop et aller sur leur termnal intégré puis aller jusqu'au répertoire de travail (dossier qui contient le fichier **[docker-compose.yml](./docker-compose.yml)**) et taper la commande : 
-`docker compose -p blood_pressure_project up`
+Pour cela, il vous faut lancer docker desktop et aller sur leur termnal intégré puis aller jusqu'au répertoire de travail (dossier qui contient le fichier **[docker-compose.yml](./docker-compose.yml)**) et taper la commande :
+
+```bash 
+docker compose -p blood_pressure_project up
+```
 
 Puis lancé manuellement les conteneurs (recommandée) ou bien les lancés avec la commande:
-`docker compose start`
+```bash
+docker compose start
+```
 
 
 
