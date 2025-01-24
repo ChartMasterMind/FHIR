@@ -66,7 +66,7 @@ Ce repository contient les fichiers suivants :
    - Script principal générant des messages FHIR
 
 2. **[Message_FHIR_Project_explication.py](./Message_FHIR_Project_explication.py)**  
-   - Fichier d'explication détaillant le fonctionnement du script principal.  
+   - Fichier cide sans grande importance, inutile de l'ouvrir !
 
 3. **[normal_blood_pressure.json](./normal_blood_pressure.json)**  
    - Exemple de fichier JSON crée après l'exécution du script principal et contenant des messages FHIR de patients avec des pressions artérielles normales.
