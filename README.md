@@ -155,7 +155,7 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
    ```bash
    git clone https://github.com/ChartMasterMind/FHIR.git
    
-2. Lancer le script depuis le terminal
+2. **Lancer le script depuis le terminal**
 ===================================
 
 1. Ouvrez votre terminal.
@@ -167,7 +167,7 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
  ```bash
 python lancement.py
 ```
-3. Lancer le script depuis Visual Studio Code (VS Code)
+3.** Lancer le script depuis Visual Studio Code (VS Code)**
 ====================================================
 
 1. Ouvrez le dossier du repository dans VS Code.
@@ -176,6 +176,11 @@ python lancement.py
 
 Ce fichier `lancement.py` lance simultanément les scripts nécessaires pour générer, produire et consommer des messages en temps réel, intégrant ainsi toute la chaîne de traitement des données dans le cadre de ce projet.
 
+**IMPORTANT** : assurer vous d'avir installer toutes les bibliothèques Python nécessaires à l'aide du fichier ``requirements.txt`` en écrivant la commande suivante sur votre terminal :
+
+```bash
+pip install -r requirements.txt
+```
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
 
