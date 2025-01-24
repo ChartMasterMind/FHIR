@@ -145,7 +145,36 @@ Puis lancé manuellement les conteneurs (recommandée) ou bien les lancés avec 
 docker compose start
 ```
 
-## **5. Installer VScode ou lancer les scripts depuis le terminal**
+## **5. Installer VS Code ou lancer les scripts depuis le terminal**
+
+Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre machine locale. Une fois cela fait, vous pouvez lancer le script `lancement.py`, soit via le terminal, soit via Visual Studio Code.
+
+### **Étapes à suivre** :
+1. **Cloner le repository** :
+   Si ce n'est pas déjà fait, clonez le repository en utilisant la commande suivante dans votre terminal :
+   ```bash
+   git clone https://github.com/ChartMasterMind/FHIR.git
+   
+2. Lancer le script depuis le terminal
+===================================
+
+1. Ouvrez votre terminal.
+
+2. Naviguez jusqu'au dossier du repository cloné à l'aide de la commande ``` cd ```. si le repository se nomme FHIR alors taper la commande ```cd  FHIR```
+
+3. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
+
+ ```bash
+python lancement.py
+```
+3. Lancer le script depuis Visual Studio Code (VS Code)
+====================================================
+
+1. Ouvrez le dossier du repository dans VS Code.
+2. Ouvrez le fichier `lancement.py`.
+3. Cliquez sur l'icône de lecture (ou utilisez le raccourci `F5`) pour exécuter le script.
+
+Ce fichier `lancement.py` lance simultanément les scripts nécessaires pour générer, produire et consommer des messages en temps réel, intégrant ainsi toute la chaîne de traitement des données dans le cadre de ce projet.
 
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
@@ -164,6 +193,4 @@ Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
 
 ## **3. Travaillez avec plusieurs groupes :**
 Vous pouvez travailez avec plusieurs groupes de patients differents sur differentes perdiodes. Par exemple, vous pourrais trvailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
-
-## **4. Les Erreurs courantes :**
 
