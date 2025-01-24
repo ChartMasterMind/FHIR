@@ -95,6 +95,9 @@ Ce repository contient les fichiers suivants :
 11.**[DashBoard_Données_filtrées_pour_un_patient.png](./DashBoard_Données_filtrées_pour_un_patient.png)**
    - Dashboard qui représente les données de pression artérielle normale pour un seul patient pour un suivi medicale par exemple
 
+12. **[project_big_data.pdf](./project_big_data.pdf)**
+   - Ce document a pour objectif de détailler la configuration et l’interaction des différents fichiers utilisés dans notre projet, afin de vous offrir une compréhension approfondie de son fonctionnement.                                                                   
+
 
 ## **Instructions d’Utilisation**
 
