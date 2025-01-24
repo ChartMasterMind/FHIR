@@ -145,6 +145,7 @@ Puis lancé manuellement les conteneurs (recommandée) ou bien les lancés avec 
 docker compose start
 ```
 
+## **5. Installer VScode ou lancer les scripts depuis le terminal**
 
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
