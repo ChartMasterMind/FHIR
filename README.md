@@ -101,7 +101,7 @@ Ce repository contient les fichiers suivants :
 
 
 ## **Instructions d’Utilisation**
-==========================================================
+
 
 Cette partie est consacré aux telechargements et à la configuration des packages essentielles au projet.
 
@@ -118,13 +118,13 @@ Assurez-vous après avoir suivi les étapes d'instalation, d'avoir installé et 
 
 
 ## **1. Installer et lancer Docker Desktop**
-=========================================================================
+
 
 Vous pouvez trouver le lien de Docker Desktop à cette adresse : https://www.docker.com/products/docker-desktop/
 
 
 ## **2. Crée un répertoire contenant tout les fichiers de ce github**
-=========================================================================
+
 
 Vous pouvez par exemple exporter ce repository GitHub sur votre machine local à l'aide de cette commande : 
 
@@ -134,7 +134,7 @@ git clone https://github.com/ChartMasterMind/FHIR.git
 
 
 ## **3. Installer Kibana, elasticsearch, kafka et zookeeper sur Docker**
-=========================================================================
+
 
 Cette étape vous permettra d'installer Kibana, Elasticsearch, Kafka et Zookeeper dans des conteneurs, ce qui rend l'installation et la gestion de ces services plus faciles. Le projet contient un fichier docker-compose.yml qui vous aide à configurer et lancer ces services en quelques commandes simples. Il vous suffit de suivre les instructions dans ce fichier pour démarrer rapidement tous les services nécessaires.
 
@@ -157,13 +157,14 @@ docker compose start
 
 
 ## **4. Installer VS Code ou lancer les scripts depuis le terminal**
-=========================================================================
+
 
 Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre machine locale. Une fois cela fait, vous pouvez lancer le script `lancement.py`, soit via le terminal, soit via Visual Studio Code.
 
 ### **Étapes à suivre** :
 
  1. **Cloner le repository** :
+=========================================================================
 
 
    Si ce n'est pas déjà fait, clonez le repository en utilisant la commande suivante dans votre terminal :
@@ -173,6 +174,7 @@ git clone https://github.com/ChartMasterMind/FHIR.git
 ```
    
 2. **Lancer le script depuis le terminal**
+=========================================================================
 
 
    1. Ouvrez votre terminal.
