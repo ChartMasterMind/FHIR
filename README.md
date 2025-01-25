@@ -119,6 +119,7 @@ Vous pouvez trouver le lien de Docker Desktop à cette adresse : https://www.doc
 ## **2. Crée un répertoire contenant tout les fichiers de ce github**
 
 Vous pouvez par exemple exporter ce repository GitHub sur votre machine local à l'aide de cette commande : 
+
 ```bash
 git clone https://github.com/ChartMasterMind/FHIR.git
 ```
@@ -145,9 +146,10 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
 ### **Étapes à suivre** :
  1. **Cloner le repository** :
    Si ce n'est pas déjà fait, clonez le repository en utilisant la commande suivante dans votre terminal :
-   ```bash
-   git clone https://github.com/ChartMasterMind/FHIR.git
-   ```
+
+```bash
+git clone https://github.com/ChartMasterMind/FHIR.git
+```
    
 2. **Lancer le script depuis le terminal**
 ===================================
@@ -156,15 +158,15 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
 
    2. Naviguez jusqu'au dossier du repository cloné à l'aide de la commande ``` cd ```. Si le repository se nomme FHIR, alors taper la commande
       
-   ```bash
-   cd FHIR
-   ```
+```bash
+cd FHIR
+```
 
    5. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
 
-    ```bash
-   python lancement.py
-   ```
+```bash
+python lancement.py
+```
     
 3.** Lancer le script depuis Visual Studio Code (VS Code)**
 ====================================================
@@ -176,20 +178,19 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
 
    Pour cela, ouvrez le terminal intégré a VScode avec le raccourci `CTRL J` et crée un environnment virtuelle à l'aide de la commande :
    
-   ```bash
-   python -m venv nom_de_l_environnement
-   ```
+```bash
+python -m venv nom_de_l_environnement
+```
   ensuite activer cette evrionnement à l'aide la commande : 
 
-   ```bash
-   .\nom_de_l_environnement\Scripts\activate
+```bash
+.\nom_de_l_environnement\Scripts\activate
+```
+  et enfin installer les bibliothèques Python à l'aide du fichier requirements sur cette envrionnement.
    
-   ```
-et enfin installer les bibliothèques Python à l'aide du fichier requirements sur cette envrionnement.
-   
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 4. Ouvrez le fichier `lancement.py`.
 
