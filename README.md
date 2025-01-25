@@ -163,8 +163,7 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
 
 ### **Étapes à suivre** :
 
- 1. **Cloner le repository** :
-=========================================================================
+ ## 1. **Cloner le repository** :
 
 
    Si ce n'est pas déjà fait, clonez le repository en utilisant la commande suivante dans votre terminal :
@@ -173,8 +172,7 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
 git clone https://github.com/ChartMasterMind/FHIR.git
 ```
    
-2. **Lancer le script depuis le terminal**
-=========================================================================
+ ## 2. **Lancer le script depuis le terminal**
 
 
    1. Ouvrez votre terminal.
@@ -185,15 +183,14 @@ git clone https://github.com/ChartMasterMind/FHIR.git
 cd FHIR
 ```
 
-   3. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
+3. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
 
 ```bash
 python lancement.py
 ```
 
     
-3.** Lancer le script depuis Visual Studio Code (VS Code)**
-==========================================================
+ ## 3.** Lancer le script depuis Visual Studio Code (VS Code)**
 
 
 1. Ouvrez le dossier du repository dans VS Code.
