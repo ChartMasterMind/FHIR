@@ -228,6 +228,9 @@ Ce fichier `lancement.py` lance simultanément les scripts nécessaires pour gé
 
 
 
+
+
+
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
 
 Ce projet génère des données de pression artérielle systolique (SYS) et diastolique (DIA) pour un groupe de patients sur une période donnée. Ce fichier `README` explique comment ajuster la période temporelle, le nombre de patients, et travailler avec différents groupes de patients.
