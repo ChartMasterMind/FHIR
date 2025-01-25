@@ -151,13 +151,12 @@ docker compose -p blood_pressure_project up
 ```
 
 Puis lancé manuellement les conteneurs (recommandée) ou bien les lancés avec la commande:
+
 ```bash
 docker compose start
 ```
 
-
 ## **4. Installer VS Code ou lancer les scripts depuis le terminal**
-
 
 Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre machine locale. Une fois cela fait, vous pouvez lancer le script `lancement.py`, soit via le terminal, soit via Visual Studio Code.
 
@@ -168,9 +167,9 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
 
    Si ce n'est pas déjà fait, clonez le repository en utilisant la commande suivante dans votre terminal :
 
-```bash
-git clone https://github.com/ChartMasterMind/FHIR.git
-```
+   ```bash
+   git clone https://github.com/ChartMasterMind/FHIR.git
+   ```
    
  ## 2. **Lancer le script depuis le terminal**
 
@@ -179,24 +178,24 @@ git clone https://github.com/ChartMasterMind/FHIR.git
 
    2. Naviguez jusqu'au dossier du repository cloné à l'aide de la commande ``` cd ```. Si le repository se nomme FHIR, alors taper la commande
       
-```bash
-cd FHIR
-```
+   ```bash
+   cd FHIR
+   ```
 
-3. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
+   3. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
 
-```bash
-python lancement.py
-```
+   ```bash
+   python lancement.py
+   ```
 
     
  ## 3.** Lancer le script depuis Visual Studio Code (VS Code)**
 
 
-1. Ouvrez le dossier du repository dans VS Code.
+   1. Ouvrez le dossier du repository dans VS Code.
 
 
-2. **Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**. Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet. Donc pour éviter tout conflit, vous devez installer les bibliothèques Python.
+   2. **Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**. Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet. Donc pour éviter tout conflit, vous devez installer les bibliothèques Python.
     nécessaires pour des versions compatibles.
 
    Pour cela, ouvrez le terminal intégré a VScode avec le raccourci `CTRL J` et crée un environnment virtuelle à l'aide de la commande :
@@ -216,12 +215,12 @@ python lancement.py
    ```
 
 
-3. Ouvrez le fichier `lancement.py`.
+   3. Ouvrez le fichier `lancement.py`.
 
 
-4. Cliquez sur l'icône de lecture (ou utilisez le raccourci `F5`) pour exécuter le script.
+   4. Cliquez sur l'icône de lecture (ou utilisez le raccourci `F5`) pour exécuter le script.
 
-Ce fichier `lancement.py` lance simultanément les scripts nécessaires pour générer, produire et consommer des messages en temps réel, intégrant ainsi toute la chaîne de traitement des données dans le cadre de ce projet.
+   Ce fichier `lancement.py` lance simultanément les scripts nécessaires pour générer, produire et consommer des messages en temps réel, intégrant ainsi toute la chaîne de traitement des données dans le cadre de ce projet.
 
 
 
