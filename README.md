@@ -123,17 +123,7 @@ Vous pouvez par exemple exporter ce repository GitHub sur votre machine local à
 git clone https://github.com/ChartMasterMind/FHIR.git
 ```
 
-## **3. Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**
-
-Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet.
-
-Donc pour éviter tout conflit, vous devez installer les bibliothèques Python nécessaires pour des versions compatibles en écrivant la commande suivante sur votre terminal :
-
-```bash
-pip install -r requirements.txt
-```
-
-## **4. Installer Kibana, elasticsearch, kafka et zookeeper sur Docker**
+## **3. Installer Kibana, elasticsearch, kafka et zookeeper sur Docker**
 
 Cette étape vous permettra d'installer Kibana, Elasticsearch, Kafka et Zookeeper dans des conteneurs, ce qui rend l'installation et la gestion de ces services plus faciles. Le projet contient un fichier docker-compose.yml qui vous aide à configurer et lancer ces services en quelques commandes simples. Il vous suffit de suivre les instructions dans ce fichier pour démarrer rapidement tous les services nécessaires.
 
@@ -148,18 +138,18 @@ Puis lancé manuellement les conteneurs (recommandée) ou bien les lancés avec 
 docker compose start
 ```
 
-## **5. Installer VS Code ou lancer les scripts depuis le terminal**
+## **4. Installer VS Code ou lancer les scripts depuis le terminal**
 
 Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre machine locale. Une fois cela fait, vous pouvez lancer le script `lancement.py`, soit via le terminal, soit via Visual Studio Code.
 
 ### **Étapes à suivre** :
-1. **Cloner le repository** :
+ 1. **Cloner le repository** :
    Si ce n'est pas déjà fait, clonez le repository en utilisant la commande suivante dans votre terminal :
    ```bash
    git clone https://github.com/ChartMasterMind/FHIR.git
    ```
    
-3. **Lancer le script depuis le terminal**
+2. **Lancer le script depuis le terminal**
 ===================================
 
    1. Ouvrez votre terminal.
@@ -178,16 +168,33 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
 ====================================================
 
 1. Ouvrez le dossier du repository dans VS Code.
-2. Ouvrez le fichier `lancement.py`.
-3. Cliquez sur l'icône de lecture (ou utilisez le raccourci `F5`) pour exécuter le script.
+
+3. **Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**. Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet. Donc pour éviter tout conflit, vous devez installer les bibliothèques Python.
+    nécessaires pour des versions compatibles.
+
+   Pour cela, ouvrez le terminal intégré a VScode avec le raccourci `CTRL J` et crée un environnment virtuelle à l'aide de la commande :
+   
+   ```bash
+   python -m venv nom_de_l_environnement
+   ```
+  ensuite activer cette evrionnement à l'aide la commande : 
+
+   ```bash
+   .\nom_de_l_environnement\Scripts\activate
+   
+   ```
+et enfin installer les bibliothèques Python à l'aide du fichier requirements sur cette envrionnement.
+   
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Ouvrez le fichier `lancement.py`.
+
+6. Cliquez sur l'icône de lecture (ou utilisez le raccourci `F5`) pour exécuter le script.
 
 Ce fichier `lancement.py` lance simultanément les scripts nécessaires pour générer, produire et consommer des messages en temps réel, intégrant ainsi toute la chaîne de traitement des données dans le cadre de ce projet.
 
-**IMPORTANT** : assurer vous d'avir installer toutes les bibliothèques Python nécessaires à l'aide du fichier ``requirements.txt`` en écrivant la commande suivante sur votre terminal :
-
-```bash
-pip install -r requirements.txt
-```
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
 
@@ -204,5 +211,5 @@ Si vous voulez une période plus courte, réduisez le nombre d'itérations dans 
 Si vous souhaitez une période plus longue, augmentez la valeur d'itération.
 
 ## **3. Travaillez avec plusieurs groupes :**
-Vous pouvez travailez avec plusieurs groupes de patients differents sur differentes perdiodes. Par exemple, vous pourrais trvailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
+Vous pouvez travailez avec plusieurs groupes de patients differents sur differentes perdiodes. Par exemple, vous pourrais travailler sur un groupe de patient sur 2 ans et sur un autre groupe sur les 2 années suivante. Pour cela, il faudra executer le script principal 2 fois. Les données generées précedemment ne sont pas ecraser et les nouvelle donnée debute a la date de la derniere observation du précedent groupe.
 
