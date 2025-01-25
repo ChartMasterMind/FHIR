@@ -155,15 +155,17 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
    1. Ouvrez votre terminal.
 
    2. Naviguez jusqu'au dossier du repository cloné à l'aide de la commande ``` cd ```. Si le repository se nomme FHIR, alors taper la commande
-      ```bash
-      cd FHIR
-      ```
+      
+   ```bash
+   cd FHIR
+   ```
 
    5. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
 
     ```bash
    python lancement.py
    ```
+    
 3.** Lancer le script depuis Visual Studio Code (VS Code)**
 ====================================================
 
