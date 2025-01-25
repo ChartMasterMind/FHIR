@@ -101,9 +101,11 @@ Ce repository contient les fichiers suivants :
 
 ## **Instructions d’Utilisation**
 
+Cette partie est consacré aux telechargements et à la configuration des packages essentielles au projet.
+
 ### **Prérequis**
 
-Assurez-vous d'avoir installé et configuré les éléments suivants (de préférence sur Docker pour Kafka, Elasticsearch et Kibana) :  
+Assurez-vous après avoir suivi les étapes d'instalation, d'avoir installé et configuré les éléments suivants et que les versions correspondent à celles mentionnés en dessous :
 - **Python 3.x**  
 - **Kafka 6.2.0**
 - **Zookeeper 6.2.0**  
