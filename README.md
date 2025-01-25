@@ -198,7 +198,7 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
    2. **Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**. Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet. Donc pour éviter tout conflit, vous devez installer les bibliothèques Python.
     nécessaires pour des versions compatibles.
 
-   Pour cela, ouvrez le terminal intégré a VScode avec le raccourci `CTRL J` et crée un environnment virtuelle à l'aide de la commande :
+   Pour cela, ouvrez le terminal intégré de VScode avec le raccourci `CTRL J` et crée un environnment virtuelle à l'aide de la commande :
    
    ```bash
    python -m venv nom_de_l_environnement
