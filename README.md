@@ -131,7 +131,7 @@ Cette étape vous permettra d'installer Kibana, Elasticsearch, Kafka et Zookeepe
 Pour cela, il vous faut lancer docker desktop et aller sur leur termnal intégré puis aller jusqu'au répertoire de travail (dossier qui contient le fichier **[docker-compose.yml](./docker-compose.yml)**)  à l'aide la commande et taper la commande :
 
 ```bash 
-CD FHIR
+cd FHIR
 ```
 puis suivi de :
 ```bash 
