@@ -99,7 +99,9 @@ Ce repository contient les fichiers suivants :
    - Ce document a pour objectif de détailler la configuration et l’interaction des différents fichiers utilisés dans notre projet, afin de vous offrir une compréhension approfondie de son fonctionnement.                                                                   
 
 
+
 ## **Instructions d’Utilisation**
+==========================================================
 
 Cette partie est consacré aux telechargements et à la configuration des packages essentielles au projet.
 
@@ -114,11 +116,15 @@ Assurez-vous après avoir suivi les étapes d'instalation, d'avoir installé et 
 
 # Comment Lancer les script
 
+
 ## **1. Installer et lancer Docker Desktop**
+=========================================================================
 
 Vous pouvez trouver le lien de Docker Desktop à cette adresse : https://www.docker.com/products/docker-desktop/
 
+
 ## **2. Crée un répertoire contenant tout les fichiers de ce github**
+=========================================================================
 
 Vous pouvez par exemple exporter ce repository GitHub sur votre machine local à l'aide de cette commande : 
 
@@ -126,7 +132,9 @@ Vous pouvez par exemple exporter ce repository GitHub sur votre machine local à
 git clone https://github.com/ChartMasterMind/FHIR.git
 ```
 
+
 ## **3. Installer Kibana, elasticsearch, kafka et zookeeper sur Docker**
+=========================================================================
 
 Cette étape vous permettra d'installer Kibana, Elasticsearch, Kafka et Zookeeper dans des conteneurs, ce qui rend l'installation et la gestion de ces services plus faciles. Le projet contient un fichier docker-compose.yml qui vous aide à configurer et lancer ces services en quelques commandes simples. Il vous suffit de suivre les instructions dans ce fichier pour démarrer rapidement tous les services nécessaires.
 
@@ -135,7 +143,9 @@ Pour cela, il vous faut lancer docker desktop et aller sur leur termnal intégr�
 ```bash 
 cd FHIR
 ```
+
 puis suivi de :
+
 ```bash 
 docker compose -p blood_pressure_project up
 ```
@@ -145,12 +155,17 @@ Puis lancé manuellement les conteneurs (recommandée) ou bien les lancés avec 
 docker compose start
 ```
 
+
 ## **4. Installer VS Code ou lancer les scripts depuis le terminal**
+=========================================================================
 
 Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre machine locale. Une fois cela fait, vous pouvez lancer le script `lancement.py`, soit via le terminal, soit via Visual Studio Code.
 
 ### **Étapes à suivre** :
+
  1. **Cloner le repository** :
+
+
    Si ce n'est pas déjà fait, clonez le repository en utilisant la commande suivante dans votre terminal :
 
 ```bash
@@ -158,7 +173,7 @@ git clone https://github.com/ChartMasterMind/FHIR.git
 ```
    
 2. **Lancer le script depuis le terminal**
-===================================
+
 
    1. Ouvrez votre terminal.
 
@@ -168,41 +183,47 @@ git clone https://github.com/ChartMasterMind/FHIR.git
 cd FHIR
 ```
 
-   5. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
+   3. Exécutez le fichier `lancement.py` en utilisant la commande suivante :
 
 ```bash
 python lancement.py
 ```
+
     
 3.** Lancer le script depuis Visual Studio Code (VS Code)**
-====================================================
+==========================================================
+
 
 1. Ouvrez le dossier du repository dans VS Code.
 
-3. **Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**. Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet. Donc pour éviter tout conflit, vous devez installer les bibliothèques Python.
+
+2. **Télecharger toutes les biblothèques nécessaire à l'aide du fichier requirement**. Le fichier `requirements.txt` permet d'installer toutes les bibliothèques nécessaires au projet. Donc pour éviter tout conflit, vous devez installer les bibliothèques Python.
     nécessaires pour des versions compatibles.
 
    Pour cela, ouvrez le terminal intégré a VScode avec le raccourci `CTRL J` et crée un environnment virtuelle à l'aide de la commande :
    
-```bash
-python -m venv nom_de_l_environnement
-```
-  ensuite activer cette evrionnement à l'aide la commande : 
+   ```bash
+   python -m venv nom_de_l_environnement
+   ```
+   ensuite activer cette evrionnement à l'aide la commande : 
 
-```bash
-.\nom_de_l_environnement\Scripts\activate
-```
-  et enfin installer les bibliothèques Python à l'aide du fichier requirements sur cette envrionnement.
+   ```bash
+   .\nom_de_l_environnement\Scripts\activate
+   ```
+   et enfin installer les bibliothèques Python à l'aide du fichier requirements sur cette envrionnement.
    
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4. Ouvrez le fichier `lancement.py`.
 
-6. Cliquez sur l'icône de lecture (ou utilisez le raccourci `F5`) pour exécuter le script.
+3. Ouvrez le fichier `lancement.py`.
+
+
+4. Cliquez sur l'icône de lecture (ou utilisez le raccourci `F5`) pour exécuter le script.
 
 Ce fichier `lancement.py` lance simultanément les scripts nécessaires pour générer, produire et consommer des messages en temps réel, intégrant ainsi toute la chaîne de traitement des données dans le cadre de ce projet.
+
 
 
 # Ajuster la période temporelle et le nombre de patients dans Message_FHIR_Project
