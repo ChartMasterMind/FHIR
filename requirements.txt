@@ -1,3 +1,4 @@
+python==3.11.7
 Faker==18.6.0
 fhir.resources==7.0.1
 confluent-kafka==1.6.0
