@@ -189,7 +189,7 @@ Pour utiliser ce projet, commencez par cloner ce repository GitHub sur votre mac
    ```
 
     
- ## 3.** Lancer le script depuis Visual Studio Code (VS Code)**
+ **## 3.Lancer le script depuis Visual Studio Code (VS Code)**
 
 
    1. Ouvrez le dossier du repository dans VS Code.
